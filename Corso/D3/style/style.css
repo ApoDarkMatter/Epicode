@@ -1,17 +1,15 @@
 body {
     margin: 0;
-    padding: 0;
 }
 
 ul {
-    padding: 0;
     margin: 0;
 }
 
 li {
     display: inline;
-    margin-right: 10px;
     color: white;
+    margin-right: 20px;
 }
 
 main {
@@ -19,13 +17,13 @@ main {
 }
 
 .header-logo {
-    background-image: url("../assets/logo.png");
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: 100px;
     background-color: #232F3E;
     height: 50px;
-    padding-left: 25px;
+}
+
+#logo {
+    width: 125px;
+    margin-left: 20px;
 }
 
 .menu {
@@ -39,5 +37,4 @@ main {
     text-align: center;
     color: white;
     height: 25px;
-    margin: auto;
 }
