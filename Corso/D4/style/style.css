@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #EAEDED;
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+    display: inline;
+    color: white;
+    margin-right: 20px;
+}
+
+main {
+    margin: 25px;
+}
+
+a {
+    font-size: 0.7em;
+    margin-left: 20px;
+}
+
+.header-logo {
+    background-color: #232F3E;
+    height: 50px;
+}
+
+#logo {
+    width: 125px;
+    margin-left: 20px;
+}
+
+.menu {
+    background-color: #364757;
+    height:25px;
+}
+
+.shop-all {
+    width: 100%;
+    background-color: #F56600;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.gift-guide {
+    background-image: url("../assets/bg-image.png");
+    background-size: 92%;
+    background-repeat: repeat;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.perfect-gift-container {
+    width:100%;
+    background-color: white;
+    padding-bottom: 25px;
+}
+
+.img-4-row {
+    width: 23%;
+    height: 400px;
+    border-radius: 10%;
+    margin-left: 1.5%;
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);  
+}
+
+.obj-100-width {
+    width:100%;
+    margin-top: 25px;
+}
+
+h2 {
+    padding: 20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.back-to-top {
+    height: 25px;
+    background-color: #364757;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.back-top {
+    color: white;   
+}
+
+.footer-logo {
+    background-color: #232F3E;
+    height: 150px;
+    background-image: url(../assets/logo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 150px;
+}
