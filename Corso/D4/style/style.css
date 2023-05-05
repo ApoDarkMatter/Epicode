@@ -106,3 +106,44 @@ h3 {
     background-position: center center;
     background-size: 150px;
 }
+
+.inline {
+    background-color: white; 
+    width: 20%;
+    display: inline-block;
+    margin-top: 25px;
+    margin-right: 1.8%;
+    padding-left: 25px;
+    padding-right: 25px;
+}   
+
+.product-inline {
+    width: 49%;
+    display: inline-block;
+    position: relative;
+}
+
+.product-img  {
+    width: 90%;
+}
+
+.product-inline h3 {
+    display: inline-block;
+}
+
+.inline p a {
+    font-size: 0.8rem;
+    color:#1F87FF;
+    margin: 0;
+}
+
+.inline h2 {
+    padding: 0;
+}
+
+.new {
+    width: 50px;
+    position: absolute;
+    bottom: 40px;
+    right: 5px;
+}
