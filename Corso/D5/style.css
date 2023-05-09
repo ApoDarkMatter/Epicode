@@ -1,25 +1,54 @@
 .container {
-    margin-left: 4rem;
-    margin-top: 4rem;
-  }
-  .container div {
-    width: 70px;
-    height: 60px;
-    border: 1px solid black;
-    display: inline-block;
-  }
-  .container div:nth-child(even) {
-    border-color: red;
-  }
+  margin-left: 4rem;
+  margin-top: 4rem;
+  font-size: 0px;
+}
 
-  .container div:nth-child(odd) span:nth-child(even) {
-    color:green;
-  }
+.container div {
+  width: 70px;
+  height: 60px;
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  font-size: 1rem;
+}
 
-  .container div:nth-child(2) span:last-of-type {
-    color:blue;
-  }
+.container div:nth-child(even) {
+  border-color: red;
+}
 
-  .container div:nth-child(6) span:not( :last-of-type) {
-    color:yellow;
-  }
+.container div:nth-child(odd) span:nth-child(even) {
+  color:green;
+}
+
+.container div:nth-child(2) span:last-of-type {
+  color:blue;
+}
+
+.container div:nth-child(6) span:not( :last-of-type) {
+  color:yellow;
+}
+
+.container div span:first-child {
+  position: absolute;
+  bottom: -18px;
+  left: 30px;
+}
+
+.container div span:nth-child(2) {
+  position: absolute;
+  top: -18px;
+  left: 30px;
+}
+
+.container div:last-of-type span:last-of-type {
+  position: absolute;
+  right: -18px;
+  top: 20px;
+}
+
+.container div:first-of-type span:first-of-type {
+  position: absolute;
+  left: -18px;
+  top: 20px;
+}
