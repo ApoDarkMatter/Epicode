@@ -11,3 +11,7 @@
   .container div:nth-child(even) {
     border-color: red;
   }
+
+  .container div:nth-child(odd) {
+    color:green;
+  }
