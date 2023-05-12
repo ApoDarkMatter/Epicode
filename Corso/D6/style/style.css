@@ -3,9 +3,19 @@
     border-radius: 2em;
     display: inline-block;
     overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .card:hover img {
-    filter: brightness(70%);
+    filter: brightness(60%);
+}
+.card:hover .header {
+    opacity:1;
+    transform: translateY(70px);
+}
+.card:hover .description,.card:hover .upload,.card:hover .menu {
+    opacity:1;
+    transform: translateY(-70px);
 }
 img {
     transition: filter 0.5s linear;
@@ -13,7 +23,7 @@ img {
 }
 .header {
     position: absolute;
-    top: 10px;
+    top: -50px;
     right: 3%;
     background-color: red;
     width: 80px;
@@ -22,6 +32,8 @@ img {
     color: white;
     font-size: 1.5em;
     font-weight: bold;
+    opacity: 0;
+    transition: opacity 1s linear,transform 0.2s linear;
 }
 .header span {
     top: 10px;
@@ -30,7 +42,7 @@ img {
 }
 .description {
     position: absolute;
-    bottom: 3%;
+    bottom: -50px;
     left: 3%;
     width: 65%;
     height: 50px;
@@ -38,7 +50,8 @@ img {
     border-radius: 25px;
     font-weight: bold;
     text-align: center;
-    margin-top: auto;
+    opacity:0;
+    transition: opacity 1s linear,transform 0.2s linear;
 }
 .description span {
     margin-left: 10px;
@@ -52,22 +65,26 @@ img {
     height: 50px;
     width: 50px;
     left: 71%; 
-    bottom: 3%;
+    bottom: -50px;
     background-color: white;
     border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s linear,transform 0.2s linear;
 }
 .menu {
     position: absolute;
     height: 50px;
     width: 50px;
     left: 85%; 
-    bottom: 3%;
+    bottom: -50px;
     background-color: white;
     border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s linear,transform 0.2s linear;
 }
 .upload i,.menu i {
     position: absolute;
-    left: 10px;
-    top: 5px;
+    left: 11px;
+    top: 4px;
 }
 
