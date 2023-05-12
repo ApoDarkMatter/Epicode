@@ -1,0 +1,73 @@
+.card {
+    position: relative;
+    border-radius: 2em;
+    display: inline-block;
+    overflow: hidden;
+}
+.card:hover img {
+    filter: brightness(70%);
+}
+img {
+    transition: filter 0.5s linear;
+    border-radius: 2em;
+}
+.header {
+    position: absolute;
+    top: 10px;
+    right: 3%;
+    background-color: red;
+    width: 80px;
+    height: 50px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.header span {
+    top: 10px;
+    left: 18px;
+    position: absolute;
+}
+.description {
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+    width: 65%;
+    height: 50px;
+    background-color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: auto;
+}
+.description span {
+    margin-left: 10px;
+}
+.description span,i {
+    margin-top: 5px; 
+    font-size: 2em;   
+}
+.upload {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 71%; 
+    bottom: 3%;
+    background-color: white;
+    border-radius: 50%;
+}
+.menu {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 85%; 
+    bottom: 3%;
+    background-color: white;
+    border-radius: 50%;
+}
+.upload i,.menu i {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
