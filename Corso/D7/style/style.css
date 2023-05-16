@@ -1,0 +1,57 @@
+body {
+    font-weight: bold;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    line-height: 0.5em;
+    color: #86868F;
+}
+h1 {
+    color: black;
+}
+header p span {
+    margin: 10px;
+    
+}
+
+header p span:not(:first-of-type) {
+    color:#E491AF;
+}
+
+nav {
+    color: #86868F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+nav div span {
+    margin-top: 50px;
+    margin: 20px;
+}
+nav div span:last-of-type {
+    background-color: #F3F3F4;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+
+}
+
+
+#rose-button, #grey-button {
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+}
+#grey-button {
+    border-color: #86868F;
+}
+#rose-button {
+    border-color: #E491AF;
+    padding-right: 50px;
+}
