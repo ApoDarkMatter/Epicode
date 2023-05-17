@@ -1,6 +1,7 @@
 header {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 2em;
     line-height: 0.5em;
@@ -26,6 +27,7 @@ header p span:not(:first-of-type) {
 nav {
     color: #86868F;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     width: 100%;
