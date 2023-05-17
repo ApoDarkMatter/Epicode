@@ -60,7 +60,7 @@ nav div span:last-of-type {
 .post {
     display: flex;
     flex-direction: column;
-    width: 22%;
+    max-width: 340px;
     margin: 1%;
 }
 .main-title {
