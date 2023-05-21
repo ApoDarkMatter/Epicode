@@ -1,37 +1,375 @@
+body {
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: rgba(0,0,0,0.8);
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
 header {
     width: 100%;
-    height: 75px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 6px 10px -2px  #edeaea;
+    position: fixed;
+    top:0;
+    background-color: white;
+    z-index: 2;
 }
 
+.blank-div {
+    width: 40%;
+}
 .container {
     display: flex;
-    width: 100%;
-    
+    width: 90%;
+    margin: auto auto;
+    margin-top: 60px;
 }
 
 main {
     width: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid gainsboro;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.icon-user, .icon-user ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-user ul li {
+    margin-left: 10px;
+}
+
+.merber-btn {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.merber-btn:hover {
+    background-color: grey;
+    color:white;
+}
+
+.user-icon {
+    background-color: #db6137;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.user-icon span {
+    margin-left: 3px;
+    margin-right: 3px;
+    color:white;
+}
+
+.merber-btn {
+    border: 1px solid grey;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.recommended-menu {
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 95%;
+}
+
+.recommended-menu span {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.recommended-menu span:nth-child(1):hover {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    padding-bottom:10px;
+}
+
+.recommended-menu span:nth-child(2) {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    padding:10px;
+}
+.article {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.text {
+    width: 70%;
+}
+.article-img {
+    width: 20%;
+    margin:  0 auto;
+}
+.article-img img {
+    width: 100%;
+    aspect-ratio: 4.5 / 3;
+    object-fit: cover;
+}
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author img {
+    width: 20px;
+    margin-right: 7px;
+    border-radius: 50%;
+}
+.author>span {
+    font-size: 0.9rem;
+}
+.name, .argument {
+    font-weight: 600;
+}
+h2 {
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 a:hover {
+    color:red;
+}
+.short-description {
+    font-size: 0.9rem;
+    color: grey;
+}
+.preview-article-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.preview-article-footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+    font-size: 0.7rem;
+}
+
+.preview-article-footer ul li {
+    margin: 2px;
+}
+
+.preview-article-footer ul li:nth-child(5) {
+    border-radius: 15px;
+    background-color: gainsboro;
+    padding: 5px;
+}
+
+.preview-article-footer div span {
+    margin-right: 5px;
+}
+.preview-article-footer div span a{
+    color: black;
 }
 
 footer {
     width: 30%;
+    padding: 10px;
+    margin-left: 50px;
 }
 
-
-
-
-
-
-
-
-
-/*TEMP COLOR*/
-header {
-    background-color: blue;
+.twitter-connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: 0 auto;
+    border-bottom: 1px solid gainsboro;
+    width: 80%;
+    padding-top: 20px;
 }
-main {
-    background-color: red;
+.connect-to-twitter {
+    border: 1px solid grey;
+    padding: 7px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
 }
-footer {
-    background-color: aqua;
+
+.connect-to-twitter:hover {
+    background-color: grey;
+    color: white; 
+}
+
+.connect-to-twitter span {
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.connect-to-twitter img {
+    width: 20px;
+}
+.twitter-connect p {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.twitter-connect p a {
+    color: grey;
+}
+
+.reccomended-topics {
+    width: 80%;
+    margin: 0 auto;
+}
+.reccomended-topics p, .who-to-follow p, .recently-saved p {
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.reccomended-topics ul li {
+    border: 1px solid #f2f2f2;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    font-size: 0.7rem;
+    margin: 5px;
+}
+
+.reccomended-topics ul li:hover {
+    background-color: grey;
+    color: white; 
+}
+
+.reccomended-topics ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.who-to-follow {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+.follow-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.author-desc {
+    display: flex;
+    align-items: center;
+}
+
+.follow-card img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.author-description {
+    display: flex;
+    flex-direction: column;
+}
+.author-description span:first-child {
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+.author-description span:last-child {
+    font-size: 0.6rem;
+    color: grey;
+    margin-top: 8px;
+}
+
+.follow-button {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    margin: 5px;
+    height: 10px;
+}
+
+.follow-button:hover {
+    background-color: grey;
+    color: white;
+}
+
+.recently-saved {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+
+.recently-saved-card h2 {
+    font-size: 1rem;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.recently-saved-card ul {
+    display: flex;
+}
+
+.recently-saved-card ul li {
+    margin-right: 10px;
+    font-size: 0.7rem;
+}
+
+.see-all a {
+    color: green;
+    text-decoration: none;
+}
+
+.see-all a:hover {
+    color: grey;
+}
+
+.recently-saved-card {
+    margin-bottom: 30px;
+}
+.footer-menu ul {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+
+.footer-menu ul li {
+    margin: 10px; 
+}
+
+.footer-menu ul li a {
+    color:grey;
+    text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+    color: black;
 }
