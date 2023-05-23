@@ -1,0 +1,3 @@
+1. Un algoritmo è un insieme di istruzioni che vengono date a un computer per ottenere un determinato risultato.
+2. Una variabile è un contenitore dove poter salvare un determinato dato per essere poi usato attraverso algoritmi. Può essere un numero, una stringa, ecc ecc
+3. No non sono la stessa cosa. Undefined è una variabile che non è stata dichiarata, null è una variabile che è stata dichiarata ma che non ha nessun valore.
