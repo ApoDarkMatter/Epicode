@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ESERCIZIO 1
+        console.log('ESERCIZIO 1')
+
+        let numero1 = 10
+        let numero2 = 5
+        
+        if (numero1 > numero2) {
+            console.log('Numero1 è più grande')
+        } else {
+            console.log('Numero2 è più grande')
+        }
+
+
+        //ESERCIZIO 2
+        console.log('')
+        console.log('ESERCIZIO 2')
+        
+        let num = 13
+
+        if (num < 5) {
+            console.log('Tiny')
+        } else if (num < 10) {
+            console.log('Small')
+        } else if (num < 15) {
+            console.log('Medium')
+        } else if (num < 20) {
+            console.log('Large')
+        } else if (num >= 20) {
+            console.log('Huge')
+        }
+
+
+        //ESERCIZIO 3
+        console.log('')
+        console.log('ESERCIZIO 3')
+
+        for (let i=0; i<11; i++) {
+            if (i === 3 || i === 8) {
+                continue
+            } else {
+                console.log(i)
+            }
+        }
+
+
+        //ESERCIZIO 4
+        console.log('')
+        console.log('ESERCIZIO 4')
+
+        for (let x=0; x<16; x++) {
+            if (x%2 === 0) {
+                console.log(`Il numero ${x} è PARI`)
+            } else {
+                console.log(`Il numero ${x} è DISPARI`)
+            }
+        }
+
+
+        //ESERCIZIO 1 - EXTRA
+        console.log('')
+        console.log('ESERCIZIO 1 - EXTRA')
+
+        let num1 = 0
+        let num2 = 8
+
+        if (num1 === 8 || num2 === 8) {
+            console.log(`Uno dei due numeri è uguale a 8`)
+        } 
+        if (num1+num2 === 8 || num1-num2 === 8) {
+            console.log(`L'addizione o la sottrazione è uguale a 8`)
+        }
+
+
+        //ESERCIZIO 2 - EXTRA
+        console.log('')
+        console.log('ESERCIZIO 2 - EXTRA')
+
+        let totalShoppingCart = 51
+
+        if (totalShoppingCart > 50) {
+            console.log(`Hai la spedizione gratuita! Il totale dell'ordine è ${totalShoppingCart}`)
+        } else {
+            totalShoppingCart += 10
+            console.log(`Il totale del tuo ordine compresa la spedizione è di ${totalShoppingCart}`)
+        }
+
+
+        //ESERCIZIO 3 - EXTRA
+        console.log('')
+        console.log('ESERCIZIO 3 - EXTRA')
+
+        let totalShoppingCart2 = 70
+        let codiceSconto = "BLACKFRIDAY"
+
+        if (codiceSconto === "BLACKFRIDAY") {
+            totalShoppingCart2 = totalShoppingCart2 * 0.80 
+            console.log (`Oggi è il BLACK FRIDAY! Sconto del 20%`)
+        } 
+
+        if (totalShoppingCart2 > 50) {
+                console.log(`Hai la spedizione gratuita! Il totale dell'ordine è ${totalShoppingCart2}`)
+            } else {
+                totalShoppingCart2 += 10
+                console.log(`Il totale del tuo ordine compresa la spedizione è di ${totalShoppingCart2}`)
+            }
+
+        
+        //ESERCIZIO 4 - EXTRA
+        console.log('')
+        console.log('ESERCIZIO 4 - EXTRA')
+
+        let isMale = false
+        let gender = ""
+        
+        isMale?gender="male":gender="female"
+
+        console.log(`Il gender è ${gender}`)
+
+        //ESERCIZIO 5 - EXTRA
+        console.log('')
+        console.log('ESERCIZIO 5 - EXTRA')
+
+        for(let y=1; y<101; y++) {
+            if(y%3 === 0 && y%5 === 0) {
+                console.log(`${y} - FIZZ BUZZ`)
+            } else if (y%3 === 0) {
+                console.log(`${y} - FIZZ`)
+            } else if (y%5 === 0) {
+                console.log(`${y} - BUZZ`)
+            } else {
+                console.log(y)
+            }
+        }
+    </script>
+</body>
+</html>
