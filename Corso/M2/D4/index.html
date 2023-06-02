@@ -61,22 +61,16 @@
 
         //ESERCIZIO PT 2
         let users = []
+        let onlyAmbassador = []
 
         users.push(marco,paul,amy,andrea)
       
         for (let y=0; y<users.length; y++) {
             if (users[y].isAmbassador === true) {
                 console.log(`${users[y].name} ${users[y].lastName} è un ambassador`)
+                onlyAmbassador.push(users[y])
             } else {
                 console.log(`${users[y].name} ${users[y].lastName} non è un ambassador`)
-            }
-        }
-
-        let onlyAmbassador = []
-
-        for (let x=0; x<users.length; x++) {
-            if (users[x].isAmbassador === true) {
-                onlyAmbassador.push(users[x])
             }
         }
         console.log(onlyAmbassador)
