@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* ESERCIZIO 1
+            Scrivi una funzione chiamata "crazySum" che riceve due numeri interi come parametri.
+            La funzione deve ritornare la somma di quei due valori, ma se il loro valore è lo stesso allora deve ritornare la loro somma moltiplicata per 3.
+        */
+        console.log(`ESERCIZIO 1`)
+
+        function crazySum(num1, num2) {
+            let somma
+            if  (num1 === num2) {
+                somma = (num1 + num2)*3
+                console.log(`i numeri sono uguali quindi la somma si moltiplica per 3!  ${somma}`);
+            } else {
+                somma = num1 + num2;
+                console.log(`La somma dei numeri è ${somma}`);
+            }
+        }
+
+        crazySum(3, 3)
+
+
+        /* ESERCIZIO 2
+            Scrivi una funzione chiamata "boundary", che accetta un numero intero come parametro e ritorna true se tale parametro è incluso tra 20 e 100 (incluso) o se è esattamente uguale a 400.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 2`)
+
+        function boundary(num) {
+            let bool = false
+            if (num>=20 && num<=100 || num === 400) {
+                bool = true
+            }
+            return bool
+        }
+
+        let bound = boundary(15)
+        console.log(`${bound}`);
+
+
+        /* ESERCIZIO 3
+            Scrivi una funzione chiamata "reverseString", che accetta una stringa come parametro e la ritorna invertita (es.: EPICODE => EDOCIPE).
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 3`)
+
+        function reverseString (stringa) {
+            let splitString = stringa.split("")
+            let reverse = splitString.reverse()
+            let reversedString = reverse.join("")
+            console.log(`La stringa reverse è: ${reversedString}`) 
+        }
+
+        let stringa = `Ciaonee eee`
+        console.log(`La stringa normale è: ${stringa}`)
+        reverseString(stringa)
+
+        /* ESERCIZIO 4
+        Scrivi una funzione chiamata "upperFirst", che accetta una stringa come parametro e la ritorna rendendo maiuscola ogni lettera iniziale di ogni parola.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 4`)
+
+        function upperFirst (stringa) {
+            let isSpace = false
+            let splitString = stringa.split("")
+
+            for (let i=0;i<=splitString.length;i++) {
+                if (splitString[i] === " ") {
+                    isSpace = true
+                    continue
+                }
+                if (isSpace === true) {
+                    splitString[i] = splitString[i].toUpperCase()
+                    isSpace = false
+                }
+            }
+            return splitString.join("")
+        }
+
+        let upperFirstLetter = upperFirst("Ciao mi chiamo andrea")
+        console.log(`La stringa normale è: ${upperFirstLetter}`);
+        console.log(`La stringa con i primi caratteri maiuscoli è: ${upperFirstLetter}`);
+
+        /* ESERCIZIO 5
+        Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 5`)
+
+        function giveMeRandom(n) {
+            let arr = []
+
+            for (let y=0; y<=n; y++) {
+                arr.push(Math.floor(Math.random()*10))
+            }
+
+            return arr;
+        }
+
+        let n = 15
+        let array = giveMeRandom(n)
+        console.log(`Ecco l'array con ${n} numeri random: ${array}`);
+
+
+        //EXTRA:
+        /* ESERCIZIO 1
+        Scrivi una funzione chiamata "area" che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 1 - EXTRA`)
+
+        function area(l1, l2) {
+            return l1*l2
+        }
+
+        let areaRet = area(10,3)
+        console.log(`L'area del rettangolo è: ${areaRet}`);
+
+        /* ESERCIZIO 2
+        Scrivi una funzione chiamata "crazyDiff" che calcola la differenza assoluta tra un numero fornito e 19.
+        Se il valore calcolato è più grande di 19, la funzione deve tornare tale risultato moltiplicato per 3.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 2 - EXTRA`)
+
+        function crazyDiff (n) {
+            let diff = Math.abs(n - 19)
+            if (diff > 19) {
+                diff *= 3
+            }
+            return diff
+        }
+
+        let diffAssoluta = crazyDiff(1)
+        console.log(`La differenza assoluta è ${diffAssoluta}`);
+
+        /* ESERCIZIO 3
+        Scrivi una funzione chiamata "codify" che accetta una stringa come parametro.
+        La funzione deve aggiungere la parola "code" all'inizio della stringa fornita e ritornare il risultato, ma se la stringa fornita comincia proprio con "code" allora deve ritornarla senza modifiche.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 3 - EXTRA`)
+
+        function codify(stringa) {
+            if (stringa.startsWith(`code`)) {
+                return stringa
+            } else {
+                return "code"+stringa
+            }
+        }
+
+        let stringhetta = codify("codetest2")
+        console.log(`La nuova stringa è ${stringhetta}`);
+        let stringhetta2 = codify("test")
+        console.log(`La nuova stringa è ${stringhetta2}`);
+
+        /* ESERCIZIO 4
+        Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
+        La funzione deve controllare che tale parametro sia un multiplo di 3 o di 7, e in tal caso tornare true; altrimenti deve tornare false.
+        SUGGERIMENTO: operatore modulo
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 4 - EXTRA`)
+
+        function check3and7 (n) {
+            if (n%3 === 0 || n%7 === 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        let check = check3and7(6)
+        console.log(`${check}`);
+        let check2 = check3and7(14)
+        console.log(`${check2}`);
+        let check3 = check3and7(5)
+        console.log(`${check3}`);
+
+
+        /* ESERCIZIO 5
+        Scrivi una funzione chiamata "cutString", che accetta una stringa come parametro e la ritorna senza il primo e l'ultimo carattere.
+        */
+        console.log(``)
+        console.log(`ESERCIZIO 5 - EXTRA`)
+
+        function cutString(stringa) {
+            return stringa.slice(1,-1)
+        }
+
+        let stringhettina = cutString("LaPrimaELultimaLetteraVieneEliminata")
+        console.log(`La prima e l'ultima lettera sono state eliminate: ${stringhettina}`);
+    </script>
+</body>
+</html>
