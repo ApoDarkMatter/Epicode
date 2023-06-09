@@ -1,0 +1,27 @@
+table tr:first-of-type {
+    font-weight: bold;
+}
+body {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.left, .right {
+    width: 50%;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    height: 50px;
+    width: 250px;
+    background-color: gainsboro;
+    font-weight: 600;
+    font-size:  1.3rem;
+    margin: 10px;
+}
+.amazon-link {
+    text-decoration: none;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="left">
+        <h1>Tech Shop</h1>
+        <table>
+            <tr>
+                <td>Image</td>
+                <td>Amazon Link</td>
+                <td>Description</td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200" alt="Some tech image"></td>
+                <td><a href="#">Link</a></td>
+                <td>Fantastic Smartphone!!</td>
+                <td class="price">700 €</td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200" alt="Some tech image"></td>
+                <td><a href="#">Link</a></td>
+                <td>Fantastic Smartphone!!</td>
+                <td class="price">700 €</td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200" alt="Some tech image"></td>
+                <td><a href="#">Link</a></td>
+                <td>Fantastic Smartphone!!</td>
+                <td class="price">700 €</td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200" alt="Some tech image"></td>
+                <td><a href="#">Link</a></td>
+                <td>Fantastic Smartphone!!</td>
+                <td class="price">700 €</td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200" alt="Some tech image"></td>
+                <td><a href="#">Link</a></td>
+                <td>Fantastic Smartphone!!</td>
+                <td class="price">700 €</td>
+            </tr>
+        </table>
+        <textarea></textarea>
+        <footer>
+            <div>Tech Shop</div>
+            <div id="address">Via le dita dal naso 55, Giangiuseppo</div>
+        </footer>
+    </div>
+    <div class="right">
+        <button onclick="cambiaH1()">Change H1!</button>
+        <button onclick="cambiaBG()">Change BG!</button>
+        <button onclick="cambiaFooter()">Change Address!</button>
+        <button onclick="modifyLink()">Change CSS link!</button>
+        <button onclick="hideIMG()">Hide IMG!</button>
+        <button onclick="modifyPriceColor()">Change Price Color</button>
+        <button onclick="resetPriceColor()">Default Price Color</button>
+    </div>
+    <script>
+        function cambiaH1() {
+            if (document.querySelector('h1').innerText === "Tech Shop") {
+                document.querySelector('h1').innerText = "Tech Shop WOW!"
+            } else {
+                document.querySelector('h1').innerText = "Tech Shop"
+            }
+        }
+        function cambiaBG() {
+            if (document.querySelector('body').bgColor === "white") {
+                document.querySelector('body').bgColor = "red"
+            } else {
+                document.querySelector('body').bgColor = "white"
+            }
+        }
+        function cambiaFooter() {
+            if (document.getElementById('address').innerText === "Via le dita dal naso 55, Giangiuseppo") {
+                document.getElementById('address').innerText = "Via le mani dagli occhi 44, Buriano"
+            } else {
+                document.getElementById('address').innerText = "Via le dita dal naso 55, Giangiuseppo"
+            }
+        }
+        function modifyLink() {
+            let links = document.querySelectorAll('a')
+            if (document.querySelector('a').className == "") {
+                for ( link of links ) {
+                    link.classList.add('amazon-link')
+                }
+            } else {
+                for ( link of links ) {
+                    link.classList.remove('amazon-link')
+                }
+            }
+        }
+        function hideIMG() {
+            let links = document.querySelectorAll('img')
+            if (document.querySelector('img').style.display == "none") {
+                for ( link of links ) {
+                    link.style.display = ''
+                }
+            } else {
+                for ( link of links ) {
+                    link.style.display = 'none'
+                }
+            }
+        }
+        const getRandomColor = function () {
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+            return `rgb(${red},${green},${blue})`    
+        }
+
+        function modifyPriceColor() {
+            let prices = document.getElementsByClassName('price')
+            for ( price of prices ) {
+                price.style.color = getRandomColor()
+            }
+        }
+        function resetPriceColor() {
+            let prices = document.getElementsByClassName('price')
+            for ( price of prices ) {
+                price.style.color = "black"
+            }
+        }
+    </script>
+</body>
+</html>
