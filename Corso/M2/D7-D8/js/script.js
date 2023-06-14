@@ -142,7 +142,7 @@ function search(tit,loc) {
     return [resObj, count]
 }
 
-search("dev","US")
+console.log(search("dev","US"))
 
 //PARTE 2 - STAMPA RISULTATI SU HTML
 
