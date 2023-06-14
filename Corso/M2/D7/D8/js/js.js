@@ -129,22 +129,16 @@ const jobs = [
 //PARTE 1 - FUNZIONE DI RICERCA
 function search(tit,loc) {
     let count = 0
-    //let result = []
     let resObj = new Object()
     let x = 0
 
     for (let i = 0; i < jobs.length; i++) {
         if (jobs[i].title.toLowerCase().includes(tit.toLowerCase()) && jobs[i].location.toLowerCase().includes(loc.toLowerCase())) {
-            //result.push(`title: ${jobs[i].title}, location: ${jobs[i].location}`)
             resObj[x] = {title: jobs[i].title,location: jobs[i].location}
             x++
             count++
         }
     }
-    //console.log(`Numero risultati trovati: ${count}`)
-    //console.log(`Risultati trovati:`)
-    //console.log(result);
-    //console.log(resObj);
     return [resObj, count]
 }
 
@@ -166,17 +160,15 @@ function searchButton() {
 
 function printResult(resObj,count) {
   document.getElementById('resultData').innerHTML = `Total search result: ${count}`
-  let table = document.getElementById('resultTable').innerHTML
-  for (let y = 0; y < resObj.length; y++) {
-    table =  `${table}<tr>`
-    for (let x = 0; x < resObj[y].length; x++) {
-      table = `${table}<td>${resObj[y].title}</td>`
-      table = `${table}<td>${resObj[y].location}</td>`
+  let table = "<table><tr><th>Title</th><th>Location</th></tr>"
+    for (let x = 0; x < count; x++) {
+      console.log(x)
+      table = `${table}<tr><td>${resObj[x].title}</td><td>${resObj[x].location}</td></tr>`
     }
-    table = `${table}</tr>`
+    table = `${table}</table>`
+    document.getElementById('resultTable').innerHTML = table
   }
-  console.log(table);
-}
+  
 
 
 

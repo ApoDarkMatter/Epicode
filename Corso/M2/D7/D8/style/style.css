@@ -5,7 +5,6 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 100%;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     color: rgba(255,255,255,0.8);
@@ -33,6 +32,7 @@ main {
     margin-bottom: 45px;
     font-size: 1.3rem;
     font-weight: 400;
+    text-decoration: underline;
 }
 label {
     font-weight: 600;
@@ -41,7 +41,7 @@ label {
 input {
     margin-top: 5px;
     margin-bottom: 35px;
-    height: 25px;
+    height: 35px;
     width: 35%; 
     border-radius: 10px;
     text-align: center;
@@ -54,13 +54,26 @@ button {
     font-weight: bold;
     margin-top: 15px;
 }
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    height: 10vh;
-    width: 100%;
+#resultData {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: underline;
 }
-footer p {
-    margin: 10px; 
+table {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+table tr th {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color:blueviolet;
+}
+table tr td {
+    font-size: 1.1rem;
+}
+table tr th, table tr td  {
+    border: 2px solid black;
+    padding: 10px;
 }
