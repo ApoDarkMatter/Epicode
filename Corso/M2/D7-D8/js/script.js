@@ -159,13 +159,19 @@ function searchButton() {
 }
 
 function printResult(resObj,count) {
-  document.getElementById('resultData').innerHTML = `Total search results: ${count}`
-  let table = "<table><tr><th>Title</th><th>Location</th></tr>"
+  if (count != 0) {
+    document.getElementById('resultData').innerHTML  = `Total search results: ${count}`
+    let table = "<table><tr><th>Title</th><th>Location</th></tr>"
     for (let x = 0; x < count; x++) {
       table = `${table}<tr><td>${resObj[x].title}</td><td>${resObj[x].location}</td></tr>`
     }
     table = `${table}</table>`
     document.getElementById('resultTable').innerHTML = table
+  } else {
+    document.getElementById('resultData').innerHTML  = `No jobs available`
+    document.getElementById('resultTable').innerHTML = ``
+  }
+  
   }
   
 //EXTRA - INFO BOX DATA
