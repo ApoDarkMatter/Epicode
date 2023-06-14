@@ -159,7 +159,7 @@ function searchButton() {
 }
 
 function printResult(resObj,count) {
-  document.getElementById('resultData').innerHTML = `Total search result: ${count}`
+  document.getElementById('resultData').innerHTML = `Total search results: ${count}`
   let table = "<table><tr><th>Title</th><th>Location</th></tr>"
     for (let x = 0; x < count; x++) {
       console.log(x)
