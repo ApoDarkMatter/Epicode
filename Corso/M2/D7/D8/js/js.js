@@ -125,7 +125,7 @@ const jobs = [
   },
 ]
 
-
+availableCountry()
 //PARTE 1 - FUNZIONE DI RICERCA
 function search(tit,loc) {
     let count = 0
@@ -162,13 +162,35 @@ function printResult(resObj,count) {
   document.getElementById('resultData').innerHTML = `Total search results: ${count}`
   let table = "<table><tr><th>Title</th><th>Location</th></tr>"
     for (let x = 0; x < count; x++) {
-      console.log(x)
       table = `${table}<tr><td>${resObj[x].title}</td><td>${resObj[x].location}</td></tr>`
     }
     table = `${table}</table>`
     document.getElementById('resultTable').innerHTML = table
   }
   
+//EXTRA - INFO BOX DATA
+  function availableCountry () {
+    let totalStr = ""
+    let infoBox = ""
+
+    for (let j=0; j<jobs.length; j++) {
+      console.log(j);
+      totalStr = `${totalStr}${jobs[j].location},`
+    }
+    
+    totalStr = totalStr.replace(/ /g, '');
+    let splitArray = totalStr.split(",")
+    let onlyAvailableCountry = []
+
+    for (country of splitArray) {
+      if (country != "") {
+        infoBox = `${infoBox} ${country} -`
+      }
+    }
+    infoBox = infoBox.slice(0,-1)
+    document.getElementById('info').innerHTML = infoBox
+  }
+
 
 
 

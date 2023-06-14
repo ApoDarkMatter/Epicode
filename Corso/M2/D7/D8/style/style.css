@@ -34,6 +34,28 @@ main {
     font-weight: 400;
     text-decoration: underline;
 }
+
+#info-box #info {
+    display: none;
+}
+#info-box {
+    color:burlywood;
+    position:relative;
+    font-size: 1.1rem;
+}
+#info-box:hover #info {
+    display: block;
+    width: 350px;
+    background-color:azure;
+    position:absolute;
+    top:0;
+    left: 400px;
+    font-size: 0.9rem;
+    color: black;
+    word-wrap: break-word;
+    border-radius: 10px;
+    padding:10px;
+}
 label {
     font-weight: 600;
     font-size: 1.5rem;
