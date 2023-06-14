@@ -179,7 +179,7 @@ function printResult(resObj,count) {
     }
     
     totalStr = totalStr.replace(/ /g, '');
-    let splitArray = totalStr.split(",")
+    let splitArray = totalStr.split(",").sort()
     let onlyAvailableCountry = []
 
     for (country of splitArray) {
