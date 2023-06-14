@@ -176,7 +176,7 @@ function printResult(resObj,count) {
     for (let j=0; j<jobs.length; j++) {
       totalStr = `${totalStr}${jobs[j].location},`
     }
-    
+
     let splitArray = totalStr.split(",").sort()
     let onlyAvailableCountry = []
 
@@ -192,6 +192,7 @@ function printResult(resObj,count) {
       }
     }
     infoBox = infoBox.slice(0,-1)
+    
     document.getElementById('info').innerHTML = infoBox
   }
 
