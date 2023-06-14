@@ -166,14 +166,16 @@ function searchButton() {
 
 function printResult(resObj,count) {
   document.getElementById('resultData').innerHTML = `Total search result: ${count}`
+  let table = document.getElementById('resultTable').innerHTML
   for (let y = 0; y < resObj.length; y++) {
-    document.getElementById('resultTable').innerHTML = `<tr>`
+    table =  `${table}<tr>`
     for (let x = 0; x < resObj[y].length; x++) {
-      document.getElementById('resultTable').innerHTML = `<td>${resObj[y].title}</td>`
-      document.getElementById('resultTable').innerHTML = `<td>${resObj[y].location}</td>`
+      table = `${table}<td>${resObj[y].title}</td>`
+      table = `${table}<td>${resObj[y].location}</td>`
     }
-    document.getElementById('resultTable').innerHTML = `</tr>`
+    table = `${table}</tr>`
   }
+  console.log(table);
 }
 
 
