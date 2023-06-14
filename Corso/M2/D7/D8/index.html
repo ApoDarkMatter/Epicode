@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header><h1>Find your next job!</h1></header>
+    <main>
+        <p id="totalJobs"></p>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="dev">
+        <label for="Location">Location</label>
+        <input type="location" id="location" name="location" value="us">
+        <button onclick="searchButton()">Search!</button>
+        <p id="resultData"></p>
+        <table id="resultTable"></table>
+    </main>
+    <footer><p>@2023 Apolloni Andrea Web</p></footer>
+    <script src="js/js.js"></script>
+</body>
+</html>
