@@ -161,7 +161,7 @@ function searchButton() {
     let loc = document.getElementById('location').value
     
     printResult(search(tit,loc)[0],search(tit,loc)[1])
-    //printResult(results,results)
+    console.log(search(tit,loc)[0],search(tit,loc)[1])
 }
 
 function printResult(resObj,count) {
