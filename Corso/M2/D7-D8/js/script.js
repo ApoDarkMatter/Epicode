@@ -177,18 +177,16 @@ function printResult(resObj,count) {
       totalStr = `${totalStr}${jobs[j].location},`
     }
     
-    totalStr = totalStr.replace(/ /g, '');
     let splitArray = totalStr.split(",").sort()
-    
     let onlyAvailableCountry = []
 
     for (let k=0; k<splitArray.length; k++) {
-      if (splitArray.includes(splitArray[k]) === false) {
-        onlyAvailableCountry.push(uniqueCountry)
+      if (onlyAvailableCountry.includes(splitArray[k]) === false) {
+        onlyAvailableCountry.push(splitArray[k])
       }
     }
-    console.log(onlyAvailableCountry);
-    for (country of splitArray) {
+    
+    for (country of onlyAvailableCountry) {
       if (country != "") {
         infoBox = `${infoBox} ${country} -`
       }
