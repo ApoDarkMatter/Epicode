@@ -125,81 +125,91 @@ const jobs = [
   },
 ]
 
-availableCountry()
 //PARTE 1 - FUNZIONE DI RICERCA
 function search(tit,loc) {
-    let count = 0
-    let resObj = new Object()
-    let x = 0
+  let count = 0
+  let results = new Object()
 
-    for (let i = 0; i < jobs.length; i++) {
-        if (jobs[i].title.toLowerCase().includes(tit.toLowerCase()) && jobs[i].location.toLowerCase().includes(loc.toLowerCase())) {
-            resObj[x] = {title: jobs[i].title,location: jobs[i].location}
-            x++
-            count++
-        }
-    }
-    return [resObj, count]
+  //CICLO PER LA RICERCA
+  for (let i = 0; i < jobs.length; i++) {
+      if (jobs[i].title.toLowerCase().includes(tit.toLowerCase()) && jobs[i].location.toLowerCase().includes(loc.toLowerCase())) {
+          results[count] = {title: jobs[i].title,location: jobs[i].location}
+          count++
+      }
+  }
+
+  //RETURN DI UN OGGETTO CHE CONTIENE COME PRIMO ELEMENTO L'OGGETTO CON I RISULTATI CON DUE OPZIONI (TITLE E LOCATION) E COME SECONDO ELEMENTO LA VARIABILE COUNT CHE E' LA SOMMA DEI RISULTATI OTTENUTI
+  return {results, count}
 }
 
+//LOG PER CONTROLLO ESERCIZIO PARTE 1
 console.log(search("dev","US"))
 
 //PARTE 2 - STAMPA RISULTATI SU HTML
-
 let totalJobs = jobs.length
 
+//STAMPA DI TUTTI I LAVORI DISPONIBILI CONTROLLANDO IL LENGTH DELL?OGGETTO
 document.getElementById('totalJobs').innerHTML = `Total available jobs: ${totalJobs}`
 
+//FUNZIONE PER PRENDERE I VALORI DEI DUE INPUT E PASSARLI NELLA FUNZIONE PER LA STAMPA SU HTML
 function searchButton() {
-    let tit = document.getElementById('title').value
-    let loc = document.getElementById('location').value
-    
-    printResult(search(tit,loc)[0],search(tit,loc)[1])
+  let tit = document.getElementById('title').value
+  let loc = document.getElementById('location').value
+  
+  printResult(search(tit,loc).results,search(tit,loc).count)
 }
 
+//FUNZIONE PER LA STAMPA DEI RISULTATI SU HTML
 function printResult(resObj,count) {
   if (count != 0) {
+    //SE LA VARIABILE COUNT DIVERSA DA 0 STAMPALA
     document.getElementById('resultData').innerHTML  = `Total search results: ${count}`
+
+    //CREAZIONE E STAMPA DELLA TABELLA CON TUTTI I RISULTATI OTTENUTI
     let table = "<table><tr><th>Title</th><th>Location</th></tr>"
+
     for (let x = 0; x < count; x++) {
       table = `${table}<tr><td>${resObj[x].title}</td><td>${resObj[x].location}</td></tr>`
     }
+
     table = `${table}</table>`
+
     document.getElementById('resultTable').innerHTML = table
   } else {
+    //SE VARIABILE COUNT E' 0 ALLORA STAMPA CHE NON CI SONO LAVORI DISPONIBILI E CANCELLA EVENTUALE TABELLA DI RISULTATI PRECEDENTE
     document.getElementById('resultData').innerHTML  = `No jobs available`
     document.getElementById('resultTable').innerHTML = ``
   }
-  
-  }
+}
   
 //EXTRA - INFO BOX DATA
-  function availableCountry () {
-    let totalStr = ""
-    let infoBox = ""
+//QUESTA FUNZIONE CONTROLLA TUTTE LE LOCATION DELL'OGGETTO JOBS E RESTITUISCE I PAESI UNIVOCI PER POI STAMPARLI SU UNA BOX CHE SI VISUALIZZA SOLO NEL CASO SI FACCIA HOVER CON IL MOUSE SU UNA STRINGA
+function availableCountry () {
+  let totalStr = ""
+  let infoBox = ""
 
-    for (let j=0; j<jobs.length; j++) {
-      totalStr = `${totalStr}${jobs[j].location},`
-    }
-
-    let splitArray = totalStr.split(",").sort()
-    let onlyAvailableCountry = []
-
-    for (let k=0; k<splitArray.length; k++) {
-      if (onlyAvailableCountry.includes(splitArray[k]) === false) {
-        onlyAvailableCountry.push(splitArray[k])
-      }
-    }
-    
-    for (country of onlyAvailableCountry) {
-      if (country != "") {
-        infoBox = `${infoBox} ${country} -`
-      }
-    }
-    infoBox = infoBox.slice(0,-1)
-    
-    document.getElementById('info').innerHTML = infoBox
+  for (let j=0; j<jobs.length; j++) {
+    totalStr = `${totalStr}${jobs[j].location},`
   }
+
+  let splitArray = totalStr.split(",").sort()
+  let onlyAvailableCountry = []
+
+  for (let k=0; k<splitArray.length; k++) {
+    if (onlyAvailableCountry.includes(splitArray[k]) === false) {
+      onlyAvailableCountry.push(splitArray[k])
+    }
+  }
+  
+  for (country of onlyAvailableCountry) {
+    if (country != "") {
+      infoBox = `${infoBox} ${country} -`
+    }
+  }
+  infoBox = infoBox.slice(0,-1)
+  
+  document.getElementById('info').innerHTML = infoBox
+}
 
 
 
