@@ -42,40 +42,32 @@ main {
     color:burlywood;
     position:relative;
     font-size: 1.1rem;
+    margin-bottom: 35px;
+    margin-top: 5px;
+    font-weight: 600;
 }
-#info-box:hover #info {
+
+#info-box:hover #info, #info-box:active #info {
     display: block;
     width: 350px;
     background-color:azure;
-    position:absolute;
-    top:0;
-    left: 400px;
-    font-size: 0.9rem;
-    color: black;
-    word-wrap: break-word;
-    border-radius: 10px;
-    padding:10px;
-}
-#info-box:active #info {
-    display: block;
-    width: 350px;
-    background-color:azure;
-    position:absolute;
-    top: 25px;
+    top: 100px;
     left: -50px;
     font-size: 0.9rem;
     color: black;
     word-wrap: break-word;
     border-radius: 10px;
     padding:10px;
+    opacity: 0.9;
 }
 label {
     font-weight: 600;
     font-size: 1.5rem;
+    margin-top:35px;
 }
+
 input {
     margin-top: 5px;
-    margin-bottom: 35px;
     height: 35px;
     width: 350px; 
     border-radius: 10px;
