@@ -167,11 +167,9 @@ function printResult(resObj,count) {
 
     //CREAZIONE E STAMPA DELLA TABELLA CON TUTTI I RISULTATI OTTENUTI
     let table = "<table><tr><th>Title</th><th>Location</th></tr>"
-
     for (let x = 0; x < count; x++) {
       table = `${table}<tr><td>${resObj[x].title}</td><td>${resObj[x].location}</td></tr>`
     }
-
     table = `${table}</table>`
 
     document.getElementById('resultTable').innerHTML = table
