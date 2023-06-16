@@ -179,6 +179,13 @@ function printResult(resObj,count) {
     document.getElementById('resultTable').innerHTML = ``
   }
 }
+
+//CONTROLLA SE VIENE PREMUTO IL TASTO INVIO E NEL CASO RICHIAMA LA FUNZIONE searchButton()
+document.addEventListener("keydown", function(event) {
+  if (event.code === "Enter") {
+    searchButton()
+  }
+});
   
 //EXTRA - INFO BOX DATA
 //QUESTA FUNZIONE CONTROLLA TUTTE LE LOCATION DELL'OGGETTO JOBS E RESTITUISCE I PAESI UNIVOCI PER POI STAMPARLI SU UNA BOX CHE SI VISUALIZZA SOLO NEL CASO SI FACCIA HOVER CON IL MOUSE SU UNA STRINGA
@@ -208,7 +215,3 @@ function availableCountry () {
   
   document.getElementById('info').innerHTML = infoBox
 }
-
-
-
-
