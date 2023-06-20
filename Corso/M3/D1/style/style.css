@@ -37,6 +37,23 @@
 .list-unstyled li {
     font-size: 1.3rem;
 }
+
+.blog-main ol li:nth-child(2) {
+    font-size: 1.3rem;
+    color:red;
+}
+
+.float-right {
+    color:blueviolet;
+}
+
+.blog-pagination a:nth-child(2) {
+    border: 3px solid black;
+}
+
+.text-center a:nth-child(2) {
+    color:red;
+}
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
