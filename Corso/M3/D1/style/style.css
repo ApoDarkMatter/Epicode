@@ -1,0 +1,45 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.display-4.font-italic {
+    color: red;
+}
+
+.nav span {
+    color:blueviolet;
+}
+
+.nav span:nth-child(even){
+    color:black;
+}
+
+.jumbotron div p a {
+    color: blue;
+}
+
+.blog-post p:nth-of-type(2) {
+    font-size: 1.5rem;
+}
+
+.blog-post hr {
+    background-color:red;
+}
+
+.blog-post:nth-child(3) .blog-post-meta a {
+    color:red;
+}
+.list-unstyled li {
+    font-size: 1.3rem;
+}
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
