@@ -7,7 +7,7 @@
     user-select: none;
 }
 
-h1 {
+.jumbotron h1 {
     color: red;
 }
 
@@ -35,8 +35,8 @@ h1 {
     color:red;
 }
 
-.list-unstyled li {
-    font-size: 1.3rem;
+.list-unstyled:nth-child(1) li {
+    font-size: 1.5rem;
 }
 
 .blog-main ol li:nth-child(2) {
