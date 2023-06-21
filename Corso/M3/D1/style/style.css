@@ -7,7 +7,7 @@
     user-select: none;
 }
 
-.display-4.font-italic {
+h1 {
     color: red;
 }
 
@@ -34,6 +34,7 @@
 .blog-post:nth-child(3) .blog-post-meta a {
     color:red;
 }
+
 .list-unstyled li {
     font-size: 1.3rem;
 }
