@@ -13,3 +13,11 @@
 .testimonials-img {
     height: 250px;
 }
+
+.test-person {
+    height: 75px;
+}
+
+a {
+    text-decoration: none;
+}
