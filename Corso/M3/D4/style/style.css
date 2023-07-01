@@ -1,0 +1,15 @@
+#logo {
+    height: 50px;
+    padding-right: 15px;
+}
+#jumbo-background {
+    width:100%;
+}
+.custom-text {
+    color:white;
+    text-shadow: 1px 1px black;
+}
+
+.testimonials-img {
+    height: 250px;
+}
