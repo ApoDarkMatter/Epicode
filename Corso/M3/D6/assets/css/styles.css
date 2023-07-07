@@ -292,6 +292,6 @@ footer .nav-link:hover {
   transition: all 0.1s linear;
 }
 
-svg:hover {
+.card-footer svg:hover {
   fill: #5c5776;
 }
