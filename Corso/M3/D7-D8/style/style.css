@@ -3,13 +3,9 @@
 }
 
 .nav-item svg {
-    margin-top:10px;
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-}
-
-.dropdown-position {
-    transform: translateX(-100px);
 }
 
 #genres {
