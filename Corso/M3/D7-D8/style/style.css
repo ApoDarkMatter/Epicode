@@ -1,0 +1,23 @@
+.navbar-brand img {
+    height: 50px;
+}
+
+.nav-item svg {
+    margin-top:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dropdown-position {
+    transform: translateX(-100px);
+}
+
+#genres {
+    background-color: black;
+    color:white;
+}
+
+.visible-option {
+    background-color: black;
+    border: 1px solid grey;
+}
