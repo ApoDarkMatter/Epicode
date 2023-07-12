@@ -90,8 +90,8 @@ footer a {
     position: absolute;
     left: 2%;
     z-index: 15;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: grey;
     opacity: 65%;
     color:white;
@@ -103,8 +103,8 @@ footer a {
     position: absolute;
     right: 0;
     z-index: 15;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: grey;
     opacity: 65%;
     color:white;
@@ -118,13 +118,12 @@ footer a {
     transition: all 0.1s linear;
 }
 
-/* Firefox */
+/*  
 * {
     scrollbar-width: thin;
     scrollbar-color: #4A4A4A #DFE9EB;
   }
   
-  /* Chrome, Edge and Safari */
   *::-webkit-scrollbar {
     height: 5px;
   }
@@ -150,5 +149,42 @@ footer a {
   }
   
   *::-webkit-scrollbar-thumb:active {
+    background-color: #4A4A4A;
+  } */
+
+  *{
+    scrollbar-color: transparent transparent;
+  }
+  
+  *::-webkit-scrollbar {
+    height: 7px;
+    background-color: transparent;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a2c;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background-color: #4A4A4A;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    border-radius: 5px;
     background-color: #4A4A4A;
   }
