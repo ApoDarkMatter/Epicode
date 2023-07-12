@@ -1,5 +1,5 @@
 body {
-    width: 99vw;
+    width: 98%;
 }
 .navbar-brand img {
     height: 50px;
@@ -66,12 +66,12 @@ h2 {
 .card:hover {
     z-index:10;
     scale: 1.1;
-    transition: all 0.2s linear;
+    transition: all 0.1s linear;
 }
 
 .film-list {
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 2%;
     overflow-x: auto;
     white-space: nowrap;
     padding-top: 25px;
@@ -79,5 +79,9 @@ h2 {
 }
 
 .link-secondary {
+    text-decoration: none;
+}
+
+footer a {
     text-decoration: none;
 }
