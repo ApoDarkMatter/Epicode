@@ -16,7 +16,6 @@ body {
     color:white;
     margin-left: 25px;
     height: 35px;
-    width: 100px;
 }
 
 .visible-option {
@@ -43,6 +42,7 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 
 .list-items button {
@@ -66,7 +66,7 @@ h2 {
 .card:hover {
     z-index:10;
     scale: 1.1;
-    transition: all 0.1s linear;
+    transition: scale 0.1s linear;
 }
 
 .film-list {
@@ -85,3 +85,70 @@ h2 {
 footer a {
     text-decoration: none;
 }
+
+.left {
+    position: absolute;
+    left: 35px;
+    z-index: 15;
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    opacity: 65%;
+    color:white;
+    border: none;
+    border-radius: 0% 0% 50% 0%;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    z-index: 15;
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    opacity: 65%;
+    color:white;
+    border: none;
+    border-radius: 0% 0% 0% 50%;
+}
+
+.left:hover, .right:hover {
+    opacity: 90%;
+    background-color: black;
+    transition: all 0.1s linear;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4A4A4A #DFE9EB;
+  }
+  
+  /* Chrome, Edge and Safari */
+  *::-webkit-scrollbar {
+    height: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #4A4A4A;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #4A4A4A;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #4A4A4A;
+  }
