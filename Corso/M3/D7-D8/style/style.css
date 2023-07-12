@@ -90,8 +90,8 @@ footer a {
     position: absolute;
     left: 2%;
     z-index: 15;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: grey;
     opacity: 65%;
     color:white;
@@ -103,8 +103,8 @@ footer a {
     position: absolute;
     right: 0;
     z-index: 15;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: grey;
     opacity: 65%;
     color:white;
@@ -113,6 +113,7 @@ footer a {
 }
 
 .left:hover, .right:hover {
+    scale: 1.5;
     opacity: 90%;
     background-color: black;
     transition: all 0.1s linear;
