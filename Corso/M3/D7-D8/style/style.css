@@ -70,12 +70,12 @@ h2 {
 }
 
 .film-list {
-    display: inline-block;
+    display: relative;
     margin-left: 2%;
-    overflow-x: auto;
     white-space: nowrap;
     padding-top: 25px;
     padding-bottom: 25px;
+    max-height: 230px;
 }
 
 .link-secondary {
@@ -87,29 +87,27 @@ footer a {
 }
 
 .left {
-    position: absolute;
+    position: relative;
     left: 2%;
     z-index: 15;
     width: 30px;
-    height: 30px;
+    height: 100%;
     background-color: grey;
     opacity: 65%;
     color:white;
     border: none;
-    border-radius: 0% 0% 50% 0%;
 }
 
 .right {
-    position: absolute;
+    position: relative;
     right: 0;
     z-index: 15;
     width: 30px;
-    height: 30px;
+    height: 100%;
     background-color: grey;
     opacity: 65%;
     color:white;
     border: none;
-    border-radius: 0% 0% 0% 50%;
 }
 
 .left:hover, .right:hover {
