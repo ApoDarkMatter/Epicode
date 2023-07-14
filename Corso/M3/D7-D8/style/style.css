@@ -69,8 +69,11 @@ h2 {
     transition: scale 0.1s linear;
 }
 
-.film-list {
+.row-film {
     position: relative;
+}
+
+.film-list {
     margin-left: 2%;
     white-space: nowrap;
     padding-top: 25px;
@@ -89,24 +92,26 @@ footer a {
     position: absolute;
     left: 2%;
     z-index: 15;
-    width: 30px;
-    height: 90%;
+    width: 40px;
+    height: 65%;
     background-color: grey;
     opacity: 65%;
     color:white;
     border: none;
+    top: 80px;
 }
 
 .right {
     position: absolute;
     right: 0;
     z-index: 15;
-    width: 30px;
-    height: 90%;
+    width: 40px;
+    height: 65%;
     background-color: grey;
     opacity: 65%;
     color:white;
     border: none;
+    top: 80px;
 }
 
 .left:hover, .right:hover {
