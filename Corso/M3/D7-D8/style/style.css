@@ -87,11 +87,11 @@ footer a {
 }
 
 .left {
-    position: relative;
+    position: absolute;
     left: 2%;
     z-index: 15;
     width: 30px;
-    height: 100%;
+    height: 30px;
     background-color: grey;
     opacity: 65%;
     color:white;
@@ -99,11 +99,11 @@ footer a {
 }
 
 .right {
-    position: relative;
+    position: absolute;
     right: 0;
     z-index: 15;
     width: 30px;
-    height: 100%;
+    height: 30px;
     background-color: grey;
     opacity: 65%;
     color:white;
