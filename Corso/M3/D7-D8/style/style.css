@@ -93,25 +93,25 @@ footer a {
     left: 2%;
     z-index: 15;
     width: 40px;
-    height: 65%;
+    height: 35%;
     background-color: grey;
     opacity: 65%;
     color:white;
     border: none;
-    top: 80px;
+    top: 40%;
 }
 
 .right {
     position: absolute;
-    right: 0;
+    right: -2%;
     z-index: 15;
     width: 40px;
-    height: 65%;
+    height: 35%;
     background-color: grey;
     opacity: 65%;
     color:white;
     border: none;
-    top: 80px;
+    top: 40%;
 }
 
 .left:hover, .right:hover {
