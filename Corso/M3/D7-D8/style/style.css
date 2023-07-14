@@ -121,6 +121,10 @@ footer a {
     transition: all 0.1s linear;
 }
 
+.not-in-center {
+  opacity: 0.2;
+}
+
 /*  
 * {
     scrollbar-width: thin;
