@@ -1,7 +1,8 @@
 const fetchMusic = (query, id) => {
+    
     const section = document.querySelector(`#${id}`)
-
     const row = document.querySelector(`#${id}Section`)
+    
     console.log(row)
     fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
         .then((raw) => {
@@ -16,7 +17,7 @@ const fetchMusic = (query, id) => {
             }
         })
         .catch(error => console.log("Si è verificato un errore!"))
-    } 
+    }
 
 window.onload = () => {
     fetchMusic("eminem", "eminem")
