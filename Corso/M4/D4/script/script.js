@@ -27,27 +27,19 @@ const printBooks = () => {
 }
 
 const addToCart = (image,title,price,asin) => {
-    const cartList = document.getElementById("cart")
+    const cartList = document.getElementById("cartList")
     let book = {
         bookImage: `${image}`,
         bookTitle: `${title}`,
         bookPrice: `${price}`,
         bookAsin: `${asin}`,
     }
-    let html = `<div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${book.bookImage}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${book.bookTitle}</h5>
-                                <p class="card-text">Price: ${book.bookPrice}</p>
-                                <button class="btn btn-danger" onclick="removeFromCart(${book.bookAsin})">Remove from cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
+    html = `<li>
+                <img src="${book.bookImage}" class="img-fluid rounded-start" alt="...">
+                <h5 class="card-title">${book.bookTitle}</h5>
+                <p class="card-text">Price: ${book.bookPrice}</p>
+                <button class="btn btn-danger" onclick="removeFromCart()">Remove from cart</button>         
+            </li>`
     cartList.insertAdjacentHTML('beforeend', html)
 
     const numCart = document.getElementById("num-cart")
@@ -57,8 +49,7 @@ const addToCart = (image,title,price,asin) => {
 }
 
 const removeFromCart = () => {
-    
-
+    event.target.closest("li").remove()
 
     const numCart = document.getElementById("num-cart")
     let nCart = numCart.innerHTML

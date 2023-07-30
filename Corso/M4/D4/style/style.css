@@ -6,8 +6,10 @@
 
 .cart {
     background-color: bisque;
-    width: 500px;
+    width: 750px;
     position: absolute;
+    left: 50%;
+    top: 50px; 
     text-align: center;
     margin: 0 auto;
     transform: translateX(-50%);
@@ -49,4 +51,22 @@
 #cart img {
     height: 130px;
     margin: 5px;
+}
+
+#cartList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#cartList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid black;
+}
+
+#cartList li h5 {
+    width: 250px;
 }
