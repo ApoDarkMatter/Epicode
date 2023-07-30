@@ -7,11 +7,10 @@ const printBooks = () => {
             return res.json()
         })
         .then(data => {
-            console.log(data)
             let bookList = document.getElementById("book-list")
             bookList.innerHTML = data
             .map((book) => {
-                return `<div class="card" style="width: 15rem;">
+                return `<div class="card" style="width: 15rem;" id="b_${book.asin}">
                             <img src="${book.img}" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">${book.title}</h5>
@@ -27,6 +26,7 @@ const printBooks = () => {
 }
 
 const addToCart = (image,title,price,asin) => {
+    
     const cartList = document.getElementById("cartList")
     let book = {
         bookImage: `${image}`,
@@ -55,13 +55,31 @@ const removeFromCart = () => {
     let nCart = numCart.innerHTML
     nCart--
     numCart.innerHTML = nCart
+
+    if (nCart == 0) {
+        document.getElementById("cart").style.display = "none"
+    }
+
 }
 
 const seeCart = () => {
     const cartBtn = document.getElementById("cart")
-    if (cartBtn.style.display === "none") {
-        cartBtn.style.display = "flex"
-    } else {
+    if (cartBtn.style.display === "flex") {
         cartBtn.style.display = "none"
+    } else {
+        cartBtn.style.display = "flex"
     }
+}
+
+
+const search = (text) => {
+    let allTitles = document.querySelectorAll(".card")
+
+    allTitles.forEach((title) => { 
+        if (!title.innerText.toLowerCase().includes(text)) {
+            title.style.display = "none"
+        } else {
+            title.style.display = "block"
+        }
+    })
 }

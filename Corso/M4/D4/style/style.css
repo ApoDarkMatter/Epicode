@@ -33,6 +33,11 @@
     justify-content: space-between;
 }
 
+.card {
+    margin-bottom: 10px;
+    border: 1px solid grey;
+}
+
 .card img {
     height: 350px;
 }
@@ -69,4 +74,10 @@
 
 #cartList li h5 {
     width: 250px;
+}
+
+@media screen and (max-width: 600px) {
+    .cart {
+        width: 100%;
+    }
 }
