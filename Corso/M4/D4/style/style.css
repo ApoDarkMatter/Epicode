@@ -1,0 +1,52 @@
+.cart-btn {
+    border: 0;
+    background-color: #F8F9FA;
+    position: relative;
+}
+
+.cart {
+    background-color: bisque;
+    width: 500px;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    transform: translateX(-50%);
+    flex-direction: column;
+}
+
+#num-cart {
+    position: absolute;
+    background-color: red;
+    width: 17px;
+    height: 16px;
+    border-radius: 50%;
+    top: 0;
+    right: -5px;
+    font-size: 0.6rem;
+}
+
+#book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card img {
+    height: 350px;
+}
+
+.border-book {
+    border: 2px solid red;
+}
+
+#cart {
+    z-index: 999;
+    font-size: 0.8rem;
+    padding: 10px;
+    display: none;
+}
+
+#cart img {
+    height: 130px;
+    margin: 5px;
+}
