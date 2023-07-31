@@ -83,3 +83,17 @@ const search = (text) => {
         }
     })
 }
+
+let timeout;
+const inputText = document.getElementById("search-input")
+inputText.addEventListener('input', () => {
+  clearTimeout(timeout);
+  
+  timeout = setTimeout(() => {
+    if(inputText.value.length >= 3) {
+      search(inputText.value)
+    } else {
+        printBooks()
+    }
+  }, 500);
+});
