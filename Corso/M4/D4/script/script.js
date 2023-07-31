@@ -91,7 +91,7 @@ inputText.addEventListener('input', () => {
   
   timeout = setTimeout(() => {
     if(inputText.value.length >= 3) {
-      search(inputText.value)
+      search(inputText.value.toLowerCase())
     } else {
         printBooks()
     }
