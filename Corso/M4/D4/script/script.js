@@ -10,13 +10,15 @@ const printBooks = () => {
             let bookList = document.getElementById("book-list")
             bookList.innerHTML = data
             .map((book) => {
-                return `<div class="card" style="width: 15rem;" id="b_${book.asin}">
+                return `<div class="card" id="b_${book.asin}">
                             <img src="${book.img}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">${book.title}</h5>
-                            <p class="card-text">Category: ${book.category}</p>
-                            <p class="card-text">Price: ${book.price}</p>
-                            <button class="btn btn-primary" onclick="addToCart('${book.img}','${book.title}','${book.price}','${book.asin}')">Add to cart</button>
+                                <h5 class="card-title">${book.title}</h5>
+                                <div class="book-info">
+                                    <p class="card-text">Category: ${book.category}</p>
+                                    <p class="card-text">Price: ${book.price}</p>
+                                    <button class="btn btn-primary addBtn" onclick="addToCart('${book.img}','${book.title}','${book.price}','${book.asin}')">Add to cart</button>
+                                </div>
                             </div>
                         </div>`
             })

@@ -1,3 +1,6 @@
+main {
+    position: relative;
+}
 .cart-btn {
     border: 0;
     background-color: #F8F9FA;
@@ -39,10 +42,22 @@
 .card {
     margin-bottom: 10px;
     border: 1px solid grey;
+    width: 15rem;
 }
 
 .card img {
     height: 350px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .border-book {
@@ -52,13 +67,13 @@
 #cart {
     z-index: 999;
     font-size: 0.8rem;
-    padding: 10px;
+    padding: 1.5rem;
     display: none;
 }
 
 #cart img {
     height: 130px;
-    margin: 5px;
+    margin: 0.5rem;
 }
 
 #cartList {
@@ -71,7 +86,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
     border-bottom: 1px solid black;
 }
 
@@ -82,5 +97,8 @@
 @media screen and (max-width: 600px) {
     .cart {
         width: 100%;
+    }
+    .card {
+        width: 10rem;
     }
 }
