@@ -15,8 +15,8 @@ const printBooks = () => {
                             <div class="card-body">
                                 <h5 class="card-title">${book.title}</h5>
                                 <div class="book-info">
-                                    <p class="card-text">Category: ${book.category}</p>
-                                    <p class="card-text">Price: ${book.price}</p>
+                                    <p class="card-text"><span class="bold-text">Category:</span> ${book.category}</p>
+                                    <p class="card-text"><span class="bold-text">Price:</span> ${book.price} €</p>
                                     <button class="btn btn-primary addBtn" onclick="addToCart('${book.img}','${book.title}','${book.price}','${book.asin}')">Add to cart</button>
                                 </div>
                             </div>
