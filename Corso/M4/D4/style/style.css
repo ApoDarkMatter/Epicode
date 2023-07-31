@@ -19,8 +19,10 @@
 #num-cart {
     position: absolute;
     background-color: red;
+    color: white;
+    font-weight: 600;
     width: 17px;
-    height: 16px;
+    height: 15px;
     border-radius: 50%;
     top: 0;
     right: -5px;
@@ -30,7 +32,8 @@
 #book-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
 }
 
 .card {
