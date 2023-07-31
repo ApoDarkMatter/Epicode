@@ -36,7 +36,7 @@ const addToCart = (image,title,price,asin) => {
         bookPrice: `${price}`,
         bookAsin: `${asin}`,
     }
-    html = `<li>
+    html = `<li class="book-cart-list">
                 <img src="${book.bookImage}" class="img-fluid rounded-start" alt="...">
                 <h5 class="card-title">${book.bookTitle}</h5>
                 <p class="card-text">Price: ${book.bookPrice}</p>
@@ -48,6 +48,8 @@ const addToCart = (image,title,price,asin) => {
     let nCart = numCart.innerHTML
     nCart++
     numCart.innerHTML = nCart
+
+    document.getElementById("remove-all").style.display = "block"
 }
 
 const removeFromCart = () => {
@@ -60,8 +62,21 @@ const removeFromCart = () => {
 
     if (nCart == 0) {
         document.getElementById("cart").style.display = "none"
+        document.getElementById("remove-all").style.display = "none"
     }
+}
 
+const removeAllFromCart = () => {
+    const remAll = document.getElementById("cartList")
+    remAll.innerHTML = ""
+
+    const numCart = document.getElementById("num-cart")
+    let nCart = numCart.innerHTML
+    nCart = 0
+    numCart.innerHTML = nCart
+
+    document.getElementById("cart").style.display = "none"
+    document.getElementById("remove-all").style.display = "none"
 }
 
 const seeCart = () => {

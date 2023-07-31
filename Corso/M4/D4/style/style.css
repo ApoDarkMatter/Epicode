@@ -18,7 +18,10 @@ main {
     transform: translateX(-50%);
     flex-direction: column;
 }
-
+#remove-all {
+    height: 50px;
+    display: none;
+}
 #num-cart {
     position: absolute;
     background-color: red;
