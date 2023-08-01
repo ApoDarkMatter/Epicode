@@ -52,6 +52,10 @@ main {
     width: 15rem;
 }
 
+.card-title {
+    height: 125px;
+}
+
 .card img {
     height: 350px;
 }
