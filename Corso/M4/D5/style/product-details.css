@@ -1,0 +1,18 @@
+#book-details {
+    position: relative;
+}
+
+.card {
+    margin: 0 auto;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
