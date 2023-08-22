@@ -8,10 +8,33 @@ async function fetchProducts() {
         }
         })
         const productData = await response.json()
-        console.log(productData);
+        console.log(productData)
+        printProduct(productData)
     } catch (error) {
       console.log('Errore recupero dati prodotti: ', error);
     }
+}
+
+
+
+const printProduct = (allProducts) => {
+  const productList = document.getElementById("productsList")
+
+  allProducts.forEach(element => {
+    const row = `
+        <div class="card" style="width: 18rem;">
+        <img src="${element.imageUrl}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">${element.brand}</h5>
+          <h5 class="card-title">${element.name}</h5>
+          <p class="card-text">${element.description}</p>
+          <p class="card-text">${element.price} €</p>
+          <a href="./product-details.html?id=${element._id}" class="btn btn-primary">Product page</a>
+        </div>
+      </div>
+    `
+    productList.innerHTML += row
+  });
 }
 
 fetchProducts()

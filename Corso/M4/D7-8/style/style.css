@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+/* body {
+    background-image: url("../img/background.jpeg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 500px;
+
+} */
+
 #logo {
     width: 4rem;
 }
