@@ -8,6 +8,11 @@ const priceInput = document.getElementById('price');
 
 const form = document.getElementById("product-form")
 
+const title = document.getElementById("titleAddModify")
+const params = new URLSearchParams(location.search)
+const id = params.get("id")
+console.log(id);
+
 form.addEventListener('submit', async (event) => {
 
   event.preventDefault();
@@ -40,11 +45,6 @@ form.addEventListener('submit', async (event) => {
       alert('Si è verificato un errore durante il salvataggio.')
     }
 })
-
-const title = document.getElementById("titleAddModify")
-const params = new URLSearchParams(location.search)
-const id = params.get("id")
-console.log(id);
 
 async function fetchOneProduct(id) {
   try {
