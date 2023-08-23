@@ -21,7 +21,6 @@ form.addEventListener('submit', async (event) => {
     }
   
     try {
-      
       const response = await fetch(`${apiUrl}product/`, {
         method: 'POST',
         body: JSON.stringify(product),
@@ -63,13 +62,11 @@ async function fetchOneProduct(id) {
 }
 
 const printFormProduct = (product) => {
-
   nameInput.value = product.name
   descriptionInput.value = product.description
   brandInput.value = product.brand
   imageUrlInput.value = product.imageUrl
   priceInput.value = product.price
-
 };
 
 if(id != null) {
