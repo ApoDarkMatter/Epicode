@@ -7,6 +7,7 @@ const imageUrlInput = document.getElementById('imageUrl');
 const priceInput = document.getElementById('price');
 
 const form = document.getElementById("product-form")
+const button = document.getElementById("buttonSubmit")
 
 const title = document.getElementById("titleAddModify")
 const params = new URLSearchParams(location.search)
@@ -18,13 +19,35 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const product = {
-      name: nameInput.value,
-      description: descriptionInput.value,
-      brand: brandInput.value,
-      imageUrl: imageUrlInput.value,
-      price: priceInput.value
-    }
+    name: nameInput.value,
+    description: descriptionInput.value,
+    brand: brandInput.value,
+    imageUrl: imageUrlInput.value,
+    price: priceInput.value
+  }
+
+  if(id != null) {
+    try {
+      const response = await fetch(`${apiUrl}product/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(product),
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs",
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
   
+      if (response.ok) {
+        window.location.href = 'index.html'
+      } else {
+        //alert('Si è verificato un errore durante la creazione del prodotto.')
+      }
+    } catch (error) {
+      console.log('Errore durante il salvataggio: ', error);
+      alert('Si è verificato un errore durante il salvataggio.')
+    }
+
+  } else {
     try {
       const response = await fetch(`${apiUrl}product/`, {
         method: 'POST',
@@ -44,6 +67,8 @@ form.addEventListener('submit', async (event) => {
       console.log('Errore durante il salvataggio: ', error);
       alert('Si è verificato un errore durante il salvataggio.')
     }
+  }
+  
 })
 
 async function fetchOneProduct(id) {
@@ -71,5 +96,8 @@ const printFormProduct = (product) => {
 
 if(id != null) {
   title.innerHTML = "Modify Product"
+  button.innerHTML = "Modify"
   fetchOneProduct(id)
+} else {
+  button.innerHTML = "Add"
 }
