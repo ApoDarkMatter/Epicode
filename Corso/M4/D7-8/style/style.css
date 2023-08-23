@@ -37,3 +37,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.card {
+    width: 18rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 100vw;
+    }
+}

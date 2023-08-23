@@ -22,7 +22,7 @@ const printProduct = (allProducts) => {
 
   allProducts.forEach(element => {
     const row = `
-        <div class="card col-12" style="width: 18rem;">
+        <div class="card mb-3">
         <img src="${element.imageUrl}" class="card-img-top" alt="...">
         <div class="card-body">
           <h4 class="card-title">${element.brand}</h4>
