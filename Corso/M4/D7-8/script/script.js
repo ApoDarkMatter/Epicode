@@ -19,6 +19,7 @@ async function fetchProducts() {
 
 const printProduct = (allProducts) => {
   const productList = document.getElementById("productsList")
+  productList.innerHTML = ''
 
   allProducts.forEach(element => {
     const row = `

@@ -42,6 +42,11 @@
     width: 18rem;
 }
 
+.card-img-top {
+    max-height: 18rem;
+    object-fit: cover;
+}
+
 @media only screen and (max-width: 768px) {
     .card {
         width: 100vw;
