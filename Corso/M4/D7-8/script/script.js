@@ -1,5 +1,7 @@
+//Dichiarazioni costanti
 const apiUrl = "https://striveschool-api.herokuapp.com/api/"
 
+//Funzione per fetch GET di tutti i prodotti
 async function fetchProducts() {
     try {
       const response = await fetch(`${apiUrl}product/`, {
@@ -16,7 +18,7 @@ async function fetchProducts() {
 }
 
 
-
+//Funzione per stampa nel DOM dei risultati del fetch GET
 const printProduct = (allProducts) => {
   const productList = document.getElementById("productsList")
   productList.innerHTML = ''
@@ -38,4 +40,5 @@ const printProduct = (allProducts) => {
   });
 }
 
+//Richiamo funzione fetch e stampa su DOM
 fetchProducts()

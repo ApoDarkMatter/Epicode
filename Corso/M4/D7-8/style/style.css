@@ -47,8 +47,29 @@
     object-fit: cover;
 }
 
+.btn {
+    margin-bottom: 1rem;
+}
+
+th, td {
+    text-align: center;
+}
+
 .imgbackoffice {
     width: 100px;
+}
+
+.description-title {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid red;
+}
+
+.price-text {
+    font-size: 1.1rem;
+    color: red;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,3 +1,4 @@
+//Dischiarazioni costanti elementi HRML e query da URL
 const apiUrl = "https://striveschool-api.herokuapp.com/api/"
 
 const main = document.getElementById('main-product');
@@ -5,6 +6,7 @@ const main = document.getElementById('main-product');
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
+//Funzione per fetch GET singolo prodotto
 async function fetchOneProduct(id) {
     try {
         const response = await fetch(`${apiUrl}product/${id}`, {
@@ -19,7 +21,8 @@ async function fetchOneProduct(id) {
         console.log('Errore recupero dati prodotti: ', error);
     }
 }
-  
+
+//Funzione per stampa del singolo prodotto nel DOM
 const printFormProduct = (product) => {
     main.innerHTML = `
                     <div class="row g-0">
@@ -28,13 +31,15 @@ const printFormProduct = (product) => {
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">${product.name}</h5>
+                                <h1 class="card-title">${product.name}</h1>
+                                <p class="card-text price-text"><small class="text-body-secondary"><span class="price-text">Price:</span> ${product.price} €</small></p>
+                                <p class="description-title">Description</p>
                                 <p class="card-text">${product.description}</p>
-                                <p class="card-text"><small class="text-body-secondary">${product.price}</small></p>
-                            </div>
+                                </div>
                         </div>
                     </div>  
                     `
 };
 
+//Richiamo della funzione di fetch e stampa
 fetchOneProduct(id)

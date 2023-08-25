@@ -1,3 +1,4 @@
+//Dichiarazioni costanti elementi HTML  e query da URL
 const apiUrl = "https://striveschool-api.herokuapp.com/api/"
 
 const nameInput = document.getElementById('name');
@@ -15,6 +16,8 @@ const title = document.getElementById("titleAddModify")
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
+
+//Evento che monitora il click del pulsante "Add/Modify"
 form.addEventListener('submit', async (event) => {
 
   event.preventDefault();
@@ -30,6 +33,7 @@ form.addEventListener('submit', async (event) => {
   let URL = ""
   let method = ""
  
+  //Controllo se su query string per impostare il corretto metodo al fetch per modifica o aggiunta
   if(id !== null && id !== "add") {
     URL = apiUrl+"product/"+id
     method = "PUT"
@@ -38,6 +42,7 @@ form.addEventListener('submit', async (event) => {
     method = "POST"
   }
 
+  //Esecuzione della fetch PUT o POST (determinata dal controllo appena sopra) per modifica o aggiuinta di nuovi prodotti
   try {
     const response = await fetch(URL, {
       method: method,
@@ -57,6 +62,7 @@ form.addEventListener('submit', async (event) => {
   }
 })
 
+//Funzione per fare il fetch GET di uno specifico prodotto attraverso l'id
 async function fetchOneProduct(id) {
   try {
     const response = await fetch(`${apiUrl}product/${id}`, {
@@ -80,17 +86,20 @@ const printFormProduct = (product) => {
   priceInput.value = product.price
 };
 
+//Controllo della query string per modificare il titolo e il testo del pulsante a seconda se è per aggiungere o modificare un prodotto
 if(id != null && id != "add") {
   title.innerHTML = "Modify Product"
   button.innerHTML = "Modify"
   fetchOneProduct(id)
 }
 
+//Se l'URL non ha nessuna query allora carica la tabella con tutti i prodotti nella pagina backoffice
 if(id == null) {
   form.classList.add("d-none")
   fetchProducts()
 }
 
+//Funzione per il fetch GET di tutti i prodotti
 async function fetchProducts() {
   try {
     const response = await fetch(`${apiUrl}product/`, {
@@ -105,6 +114,7 @@ async function fetchProducts() {
   }
 }
 
+//Funzione per la stampa della tabella su pagina backoffice
 const printProduct = (allProducts) => {
   let tableHtml = ``
   tableHtml = `
@@ -113,7 +123,7 @@ const printProduct = (allProducts) => {
                   <tr>
                     <th scope="col">Image</th>
                     <th scope="col">Product Name</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Price (€)</th>
                     <th scope="col">Options</th>
                   </tr>
                 </thead>
@@ -125,7 +135,7 @@ const printProduct = (allProducts) => {
                 <tr>
                   <th scope="row"><img src="${element.imageUrl}" class="imgbackoffice"></th>
                   <td>${element.name}</td>
-                  <td>${element.price} €</td>
+                  <td>${element.price}</td>
                   <td><a class="btn btn-primary" href="./backoffice.html?id=${element._id}" role="button"><ion-icon name="pencil-outline"></ion-icon></a> <button type="button" class="btn btn-danger" onClick="deleteProduct('${element._id}')"><ion-icon name="trash-outline"></ion-icon></button></td>
                 </tr>
                 `
@@ -139,6 +149,8 @@ const printProduct = (allProducts) => {
   container.innerHTML = tableHtml
 }
 
+
+//Funzione per fetch DELETE per eliminazione prodotti
 async function deleteProduct(id) {
   if (confirm('Sei sicuro di voler eliminare questo prodotto?')) {
     try {
