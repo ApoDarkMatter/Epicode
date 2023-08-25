@@ -43,7 +43,7 @@
 }
 
 .card-img-top {
-    max-height: 18rem;
+    height: 17rem;
     object-fit: cover;
 }
 
@@ -54,5 +54,8 @@
 @media only screen and (max-width: 768px) {
     .card {
         width: 100vw;
+    }
+    .card-img-top {
+        height: 20rem;
     }
 }
