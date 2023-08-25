@@ -125,7 +125,7 @@ const printProduct = (allProducts) => {
                 <tr>
                   <th scope="row"><img src="${element.imageUrl}" class="imgbackoffice"></th>
                   <td>${element.name}</td>
-                  <td>${element.price}</td>
+                  <td>${element.price} €</td>
                   <td><a class="btn btn-primary" href="./backoffice.html?id=${element._id}" role="button"><ion-icon name="pencil-outline"></ion-icon></a> <button type="button" class="btn btn-danger" onClick="deleteProduct('${element._id}')"><ion-icon name="trash-outline"></ion-icon></button></td>
                 </tr>
                 `
