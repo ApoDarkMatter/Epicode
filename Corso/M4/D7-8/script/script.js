@@ -30,7 +30,7 @@ const printProduct = (allProducts) => {
           <h5 class="card-title">${element.brand}</h5>
           <p class="card-text">${element.description}</p>
           <p class="card-text">${element.price} €</p>
-          <a href="./backoffice.html" class="btn btn-primary">Product page</a>
+          <a href="./product.html?id=${element._id}" class="btn btn-primary">Product page</a>
         </div>
       </div>
     `
