@@ -29,8 +29,8 @@ form.addEventListener('submit', async (event) => {
 
   let URL = ""
   let method = ""
-
-  if(id != null) {
+ 
+  if(id !== null && id !== "add") {
     URL = apiUrl+"product/"+id
     method = "PUT"
   } else {
@@ -39,7 +39,7 @@ form.addEventListener('submit', async (event) => {
   }
 
   try {
-    const response = await fetch(`${URL}`, {
+    const response = await fetch(URL, {
       method: method,
       body: JSON.stringify(product),
       headers: {
