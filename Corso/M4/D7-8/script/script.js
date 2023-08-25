@@ -26,8 +26,8 @@ const printProduct = (allProducts) => {
       <div class="card mb-3">
         <img src="${element.imageUrl}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h4 class="card-title">${element.brand}</h4>
-          <h5 class="card-title">${element.name}</h5>
+          <h4 class="card-title">${element.name}</h4>
+          <h5 class="card-title">${element.brand}</h5>
           <p class="card-text">${element.description}</p>
           <p class="card-text">${element.price} €</p>
           <a href="./backoffice.html" class="btn btn-primary">Product page</a>
