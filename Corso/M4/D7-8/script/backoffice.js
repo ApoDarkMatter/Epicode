@@ -12,11 +12,14 @@ const button = document.getElementById("buttonSubmit")
 
 const container = document.getElementById("main-container")
 
+const spinner  = document.getElementById("loader")
+
 const title = document.getElementById("titleAddModify")
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
+const stat = params.get("stat")
 
-const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVhNGJlMTUxNWY0MTAwMTQ2OTdhMmYiLCJpYXQiOjE2OTMwNzY0NTAsImV4cCI6MTY5NDI4NjA1MH0.GLbruDI2UUxg85xnQxE0hVnzqR1iBCI3sEdbzhqNYuw"
 
 //Controllo input se sono vuoti per gestione aggiunta prodotti senza campi
 const checkInput = () => {
@@ -66,6 +69,7 @@ form.addEventListener('submit', async (event) => {
       })
   
       if (response.ok) {
+        method == "PUT" ? alert("Product modified success") : alert("Product added success")
         window.location.href = 'backoffice.html'
       }
     } catch (error) {
@@ -73,10 +77,8 @@ form.addEventListener('submit', async (event) => {
       alert('Si è verificato un errore durante il salvataggio.')
     }
   } else {
-    console.log("errore");
+    alert("Controlla i campi, non vengono accettati campi vuoti")
   }
-  
-
 })
 
 //Funzione per fare il fetch GET di uno specifico prodotto attraverso l'id
@@ -174,6 +176,7 @@ const printProduct = (allProducts) => {
     </table>
   `
   container.innerHTML = tableHtml
+
 }
 
 

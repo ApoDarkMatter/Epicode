@@ -6,7 +6,7 @@ const main = document.getElementById('main-product');
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
-const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVhNGJlMTUxNWY0MTAwMTQ2OTdhMmYiLCJpYXQiOjE2OTMwNzY0NTAsImV4cCI6MTY5NDI4NjA1MH0.GLbruDI2UUxg85xnQxE0hVnzqR1iBCI3sEdbzhqNYuw"
 
 //Funzione per fetch GET singolo prodotto
 async function fetchOneProduct(id) {
@@ -38,13 +38,13 @@ const printFormProduct = (product) => {
                         <div class="col-md-4">
                         <img src="${imageUrl}" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
+                        <div class="col-md-8 bg-white">
+                            <div class="card-body card-body-detail">
                                 <h1 class="card-title">${brand} - ${name}</h1>
                                 <p class="card-text price-text"><small class="text-body-secondary"><span class="price-text">Price:</span> ${price} €</small></p>
                                 <p class="description-title">Description</p>
                                 <p class="card-text">${description}</p>
-                                </div>
+                            </div>
                         </div>
                     </div>
                     `

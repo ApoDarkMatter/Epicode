@@ -1,7 +1,7 @@
 //Dichiarazioni costanti
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/"
 
-const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGVhNGJlMTUxNWY0MTAwMTQ2OTdhMmYiLCJpYXQiOjE2OTMwNzY0NTAsImV4cCI6MTY5NDI4NjA1MH0.GLbruDI2UUxg85xnQxE0hVnzqR1iBCI3sEdbzhqNYuw"
 
 //Funzione per fetch GET di tutti i prodotti
 async function fetchProducts() {
@@ -24,6 +24,11 @@ async function fetchProducts() {
 const printProduct = (allProducts) => {
   const productList = document.getElementById("productsList")
   productList.innerHTML = ''
+
+  
+  loader.classList.remove('d-none');
+  productList.classList.add('d-none');
+  
 
   allProducts.forEach(element => {
     //decodifica stringhe per gestione caratteri speciali
@@ -48,6 +53,10 @@ const printProduct = (allProducts) => {
     `
     productList.innerHTML += row
   });
+  setTimeout( () => {
+    loader.classList.add('d-none');
+    productList.classList.remove('d-none');
+  }, 250)
 }
 
 //Richiamo funzione fetch e stampa su DOM

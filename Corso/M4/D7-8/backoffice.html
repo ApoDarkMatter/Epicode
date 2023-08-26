@@ -30,31 +30,30 @@
         </div>
     </nav>
 
+    <div class="containerLoader">
+      <div class="loader d-none" id="loader"></div>
+    </div>
     <div class="container" id="main-container">
       <form id="product-form" class="" novalidate>
         <h3 class="mb-4 pb-2" id="titleAddModify">Add new product</h3>
         <div class="mb-3">
           <label for="name" class="form-label">Name <span class="red-required">(*)</span></label>
           <input type="text" class="form-control" id="name" required>
-          <span class="text-danger" id="name-error"></span>
         </div>
 
         <div class="mb-3">
           <label for="description" class="form-label">Description <span class="red-required">(*)</span></label>
           <input type="text" class="form-control" id="description" required>
-          <span class="text-danger" id="description-error"></span>
         </div>
 
         <div class="mb-3">
           <label for="brand" class="form-label">Brand <span class="red-required">(*)</span></label>
           <input type="text" class="form-control" id="brand" required>
-          <span class="text-danger" id="brand-error"></span>
         </div>
 
         <div class="mb-3">
           <label for="price" class="form-label">Price € <span class="red-required">(*)</span></label>
           <input type="number" class="form-control" id="price" required>
-          <span class="text-danger" id="price-error"></span>
         </div>
 
         <div class="mb-3">
