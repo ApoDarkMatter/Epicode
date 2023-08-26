@@ -1,12 +1,14 @@
 //Dichiarazioni costanti
-const apiUrl = "https://striveschool-api.herokuapp.com/api/"
+const apiUrl = "https://striveschool-api.herokuapp.com/api/product/"
+
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
 
 //Funzione per fetch GET di tutti i prodotti
 async function fetchProducts() {
     try {
-      const response = await fetch(`${apiUrl}product/`, {
+      const response = await fetch(`${apiUrl}`, {
         headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+        "Authorization": token
         }
         })
         const productData = await response.json()

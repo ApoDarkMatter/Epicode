@@ -1,17 +1,19 @@
 //Dischiarazioni costanti elementi HRML e query da URL
-const apiUrl = "https://striveschool-api.herokuapp.com/api/"
+const apiUrl = "https://striveschool-api.herokuapp.com/api/product/"
 
 const main = document.getElementById('main-product');
 
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+
 //Funzione per fetch GET singolo prodotto
 async function fetchOneProduct(id) {
     try {
-        const response = await fetch(`${apiUrl}product/${id}`, {
+        const response = await fetch(`${apiUrl}${id}`, {
         headers: {
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+            "Authorization": token
         }
         })
         const productData = await response.json()

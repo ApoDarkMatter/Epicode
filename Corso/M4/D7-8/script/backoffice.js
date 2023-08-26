@@ -1,5 +1,5 @@
 //Dichiarazioni costanti elementi HTML  e query da URL
-const apiUrl = "https://striveschool-api.herokuapp.com/api/"
+const apiUrl = "https://striveschool-api.herokuapp.com/api/product/"
 
 const nameInput = document.getElementById('name');
 const descriptionInput = document.getElementById('description');
@@ -16,9 +16,11 @@ const title = document.getElementById("titleAddModify")
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+
 //Controllo input se sono vuoti per gestione aggiunta prodotti senza campi
 const checkInput = () => {
-  if (nameInput.value === "" || descriptionInput.value == "" || brandInput.value == "" || imageUrlInput.value == "" || priceInput.value == "" || checkImage == false) {
+  if (nameInput.value == "" || descriptionInput.value == "" || brandInput.value == "" || imageUrlInput.value == "" || priceInput.value == "" || checkImage == false) {
     return false
   } else {
     return true
@@ -44,10 +46,10 @@ form.addEventListener('submit', async (event) => {
  
   //Controllo se su query string per impostare il corretto metodo al fetch per modifica o aggiunta
   if(id !== null && id !== "add") {
-    URL = apiUrl+"product/"+id
+    URL = `${apiUrl}${id}`
     method = "PUT"
   } else {
-    URL = apiUrl+"product/"
+    URL = `${apiUrl}`
     method = "POST"
   }
 
@@ -58,7 +60,7 @@ form.addEventListener('submit', async (event) => {
         method: method,
         body: JSON.stringify(product),
         headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs",
+          "Authorization": token,
           "Content-type": "application/json; charset=UTF-8"
         }
       })
@@ -80,9 +82,9 @@ form.addEventListener('submit', async (event) => {
 //Funzione per fare il fetch GET di uno specifico prodotto attraverso l'id
 async function fetchOneProduct(id) {
   try {
-    const response = await fetch(`${apiUrl}product/${id}`, {
+    const response = await fetch(`${apiUrl}${id}`, {
       headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+      "Authorization": token
       }
       })
       const productData = await response.json()
@@ -120,9 +122,9 @@ if(id == null) {
 //Funzione per il fetch GET di tutti i prodotti
 async function fetchProducts() {
   try {
-    const response = await fetch(`${apiUrl}product/`, {
+    const response = await fetch(`${apiUrl}`, {
       headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+      "Authorization": token
       }
       })
       const productData = await response.json()
@@ -179,10 +181,10 @@ const printProduct = (allProducts) => {
 async function deleteProduct(id) {
   if (confirm('Sei sicuro di voler eliminare questo prodotto?')) {
     try {
-      const response = await fetch(`${apiUrl}product/${id}`, {
+      const response = await fetch(`${apiUrl}${id}`, {
         method: "DELETE",
         headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs"
+          "Authorization": token
         }
       })
   
