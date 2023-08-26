@@ -16,6 +16,14 @@ const title = document.getElementById("titleAddModify")
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
+//Controllo input se sono vuoti per gestione aggiunta prodotti senza campi
+const checkInput = () => {
+  if (nameInput.value === "" || descriptionInput.value == "" || brandInput.value == "" || imageUrlInput.value == "" || priceInput.value == "" || checkImage == false) {
+    return false
+  } else {
+    return true
+  }
+}
 
 //Evento che monitora il click del pulsante "Add/Modify"
 form.addEventListener('submit', async (event) => {
@@ -23,11 +31,12 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const product = {
-    name: nameInput.value,
-    description: descriptionInput.value,
-    brand: brandInput.value,
-    imageUrl: imageUrlInput.value,
-    price: priceInput.value
+    //encode stringhe per gestione caratteri speciali
+    name: encodeURIComponent(nameInput.value),
+    description: encodeURIComponent(descriptionInput.value),
+    brand: encodeURIComponent(brandInput.value),
+    imageUrl: encodeURIComponent(imageUrlInput.value),
+    price: encodeURIComponent(priceInput.value)
   }
 
   let URL = ""
@@ -43,23 +52,29 @@ form.addEventListener('submit', async (event) => {
   }
 
   //Esecuzione della fetch PUT o POST (determinata dal controllo appena sopra) per modifica o aggiuinta di nuovi prodotti
-  try {
-    const response = await fetch(URL, {
-      method: method,
-      body: JSON.stringify(product),
-      headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs",
-        "Content-type": "application/json; charset=UTF-8"
+  if(checkInput()) {
+    try {
+      const response = await fetch(URL, {
+        method: method,
+        body: JSON.stringify(product),
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ZjUzZmRmZmI4YjAwMTQ0MTNkMzUiLCJpYXQiOjE2OTI3MjY1OTIsImV4cCI6MTY5MzkzNjE5Mn0.Rv-6TAE7YE7A5tkUA8TnwiK8eQ6Gt70j2AuLUMsJdVs",
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+  
+      if (response.ok) {
+        window.location.href = 'backoffice.html'
       }
-    })
-
-    if (response.ok) {
-      window.location.href = 'backoffice.html'
+    } catch (error) {
+      console.log('Errore durante il salvataggio: ', error);
+      alert('Si è verificato un errore durante il salvataggio.')
     }
-  } catch (error) {
-    console.log('Errore durante il salvataggio: ', error);
-    alert('Si è verificato un errore durante il salvataggio.')
+  } else {
+    console.log("errore");
   }
+  
+
 })
 
 //Funzione per fare il fetch GET di uno specifico prodotto attraverso l'id
@@ -79,11 +94,14 @@ async function fetchOneProduct(id) {
 }
 
 const printFormProduct = (product) => {
-  nameInput.value = product.name
-  descriptionInput.value = product.description
-  brandInput.value = product.brand
-  imageUrlInput.value = product.imageUrl
-  priceInput.value = product.price
+  //decodifica stringhe per gestione caratteri speciali
+  nameInput.value = decodeURIComponent(product.name)
+  descriptionInput.value = decodeURIComponent(product.description)
+  brandInput.value = decodeURIComponent(product.brand)
+  imageUrlInput.value = decodeURIComponent(product.imageUrl)
+  priceInput.value = decodeURIComponent(product.price)
+  imageViewr.innerHTML = `<img src="${inputImage.value}" onerror="return imageError();" class="img-fluid rounded-start" alt="...">`
+        
 };
 
 //Controllo della query string per modificare il titolo e il testo del pulsante a seconda se è per aggiungere o modificare un prodotto
@@ -118,7 +136,7 @@ async function fetchProducts() {
 const printProduct = (allProducts) => {
   let tableHtml = ``
   tableHtml = `
-              <table class="table">
+              <table class="table mt-3">
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -131,12 +149,19 @@ const printProduct = (allProducts) => {
               `
   
   allProducts.forEach(element => {
+    //decodifica stringhe per gestione caratteri speciali
+    const name = decodeURIComponent(element.name)
+    const description = decodeURIComponent(element.description)
+    const brand = decodeURIComponent(element.brand)
+    const imageUrl = decodeURIComponent(element.imageUrl)
+    const price = decodeURIComponent(element.price)
+    const id = decodeURIComponent(element._id)
     const row = `
                 <tr>
-                  <th scope="row"><img src="${element.imageUrl}" class="imgbackoffice"></th>
-                  <td>${element.name}</td>
-                  <td>${element.price}</td>
-                  <td><a class="btn btn-primary" href="./backoffice.html?id=${element._id}" role="button"><ion-icon name="pencil-outline"></ion-icon></a> <button type="button" class="btn btn-danger" onClick="deleteProduct('${element._id}')"><ion-icon name="trash-outline"></ion-icon></button></td>
+                  <th scope="row"><img src="${imageUrl}" class="imgbackoffice"></th>
+                  <td>${name}</td>
+                  <td>${price}</td>
+                  <td><a class="btn btn-primary" href="./backoffice.html?id=${id}" role="button"><ion-icon name="pencil-outline"></ion-icon></a> <button type="button" class="btn btn-danger" onClick="deleteProduct('${element._id}')"><ion-icon name="trash-outline"></ion-icon></button></td>
                 </tr>
                 `
     tableHtml += row
@@ -169,4 +194,31 @@ async function deleteProduct(id) {
       alert('Si è verificato un errore durante eliminazione.')
     }
   }
+}
+
+//Anteprima immagine caricata con gestione errore se immagine non trovata
+let timeout;
+let checkImage
+
+const inputImage = document.getElementById("imageUrl")
+const imageViewr = document.getElementById("imageViewer")
+
+inputImage.addEventListener('input', () => {
+  clearTimeout(timeout);
+  
+  timeout = setTimeout(() => {
+    if(inputImage.value.length >= 1) {
+        imageViewr.innerHTML = `<img src="${inputImage.value}" onerror="return imageError();" class="img-fluid rounded-start" alt="...">`
+        checkImage = true
+      } else {
+      if (inputImage.value.length == 0) {
+        imageViewr.innerHTML = ""
+      }
+    }
+  }, 500);
+});
+
+const imageError = () => {
+  imageViewr.innerHTML = "Errore nel caricamente dell'immagine. Controlla URL"
+  checkImage = false
 }

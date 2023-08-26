@@ -24,20 +24,27 @@ async function fetchOneProduct(id) {
 
 //Funzione per stampa del singolo prodotto nel DOM
 const printFormProduct = (product) => {
+    //decodifica stringhe per gestione caratteri speciali
+    const name = decodeURIComponent(product.name)
+    const description = decodeURIComponent(product.description)
+    const brand = decodeURIComponent(product.brand)
+    const imageUrl = decodeURIComponent(product.imageUrl)
+    const price = decodeURIComponent(product.price)
+    const id = decodeURIComponent(product._id)
     main.innerHTML = `
                     <div class="row g-0">
                         <div class="col-md-4">
-                        <img src="${product.imageUrl}" class="img-fluid rounded-start" alt="...">
+                        <img src="${imageUrl}" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h1 class="card-title">${product.name}</h1>
-                                <p class="card-text price-text"><small class="text-body-secondary"><span class="price-text">Price:</span> ${product.price} €</small></p>
+                                <h1 class="card-title">${brand} - ${name}</h1>
+                                <p class="card-text price-text"><small class="text-body-secondary"><span class="price-text">Price:</span> ${price} €</small></p>
                                 <p class="description-title">Description</p>
-                                <p class="card-text">${product.description}</p>
+                                <p class="card-text">${description}</p>
                                 </div>
                         </div>
-                    </div>  
+                    </div>
                     `
 };
 

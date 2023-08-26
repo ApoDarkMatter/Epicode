@@ -24,15 +24,23 @@ const printProduct = (allProducts) => {
   productList.innerHTML = ''
 
   allProducts.forEach(element => {
+    //decodifica stringhe per gestione caratteri speciali
+    const name = decodeURIComponent(element.name)
+    const description = decodeURIComponent(element.description)
+    const brand = decodeURIComponent(element.brand)
+    const imageUrl = decodeURIComponent(element.imageUrl)
+    const price = decodeURIComponent(element.price)
+    const id = decodeURIComponent(element._id)
+
     const row = `
       <div class="card mb-3">
-        <img src="${element.imageUrl}" class="card-img-top" alt="...">
+        <img src="${imageUrl}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h4 class="card-title">${element.name}</h4>
-          <h5 class="card-title">${element.brand}</h5>
-          <p class="card-text">${element.description}</p>
-          <p class="card-text">${element.price} €</p>
-          <a href="./product.html?id=${element._id}" class="btn btn-primary">Product page</a>
+          <h4 class="card-title">${name}</h4>
+          <h5 class="card-title">${brand}</h5>
+          <p class="card-text">${description}</p>
+          <p class="card-text">${price} €</p>
+          <a href="./product.html?id=${id}" class="btn btn-primary">Product page</a>
         </div>
       </div>
     `
